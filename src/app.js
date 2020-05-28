@@ -9,6 +9,7 @@ const port = 3000;
 
 // Passing UI
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use('/pages', express.static(path.join(__dirname, 'pages')));
 app.get('/', (req, res)=>{res.sendFile(__dirname+'/index.html');});
 
 // Establish Connection
