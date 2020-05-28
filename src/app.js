@@ -5,7 +5,7 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 var stream = require('./ws/stream');
 var path = require('path');
-const port = 80;
+const port = 3000;
 
 // Passing UI
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
