@@ -79,7 +79,7 @@
     </nav>
 
     <!-- Create Room -->
-    <div class="container-fluid" id='room-create' hidden>
+    <div class="container-fluid" id='room-create' style="margin-top: 50px;" hidden>
         <div class="row">
             <div class="col-12 h2 mt-5 text-center">New Conference</div>
         </div>
@@ -103,7 +103,7 @@
     </div>
 
     <!-- Join Room -->
-    <div class="container-fluid" id='username-set' hidden>
+    <div class="container-fluid" id='username-set' style="margin-top: 50px;" hidden>
         <div class="row">
             <div class="col-12 h4 mt-5 text-center">Your Name</div>
         </div>
@@ -125,6 +125,7 @@
     <div class="container-fluid room-comm" hidden>
         <div class="row">
             <video class="local-video mirror-mode" id='local' volume='0' autoplay muted></video>
+            <video class="local-video mirror-mode" id='local-hidden' volume='0' autoplay muted hidden></video>
         </div>
 
         <div class="row">
@@ -151,6 +152,8 @@
         <!-- Auto-Generates When User Joins -->
     </div>
 
+
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
     <script>
         function copier (roomLink) {
             var dummy = document.createElement('input'),
