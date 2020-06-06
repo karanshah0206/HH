@@ -54,7 +54,8 @@ window.addEventListener('load', () => {
             // Joining Room
             socket.emit('subscribe', {
                 room: room,
-                socketId: socketId
+                socketId: socketId,
+                uName: username
             });
 
             // New User Joined
@@ -62,6 +63,7 @@ window.addEventListener('load', () => {
                 socket.emit('newUserStart', {to:data.socketId, sender:socketId});
                 pc.push(data.socketId);
                 init(true, data.socketId);
+                alert('New user has joined: ' + data.username);
             });
 
             socket.on('newUserStart', (data) => {

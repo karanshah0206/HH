@@ -22,7 +22,7 @@ const stream = (socket) => {
 
         // Inform New User Arrival
         if(socket.adapter.rooms[data.room].length > 1){
-            socket.to(data.room).emit('new user', {socketId:data.socketId});
+            socket.to(data.room).emit('new user', {socketId:data.socketId, username:data.uName});
         }
 
         console.log(socket.rooms);
