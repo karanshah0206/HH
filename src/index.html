@@ -147,16 +147,24 @@
         </div>
     </div>
 
+    <div id="new-user-manager">
+        <!-- Auto-Generates When User Joins -->
+    </div>
+
     <script>
         function copier (roomLink) {
-        var dummy = document.createElement('input'),
-                    text = roomLink;
-        document.body.appendChild(dummy);
-        dummy.value = roomLink;
-        dummy.select();
-        document.execCommand('copy');
-        document.body.removeChild(dummy);
-    }
+            var dummy = document.createElement('input'),
+                        text = roomLink;
+            document.body.appendChild(dummy);
+            dummy.value = roomLink;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+        }
+
+        function new_user (userInfo) {
+            document.getElementById('new-user-manager').innerHTML += "<div class='new-user-join' id='" + userInfo.socketId + "'> " + userInfo.username + " has joined the call</div>"
+        }
     </script>
 </body>
 </html>

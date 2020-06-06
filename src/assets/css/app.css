@@ -246,3 +246,24 @@
         z-index: 1000;
     }
 }
+
+#new-user-manager {
+    position: absolute;
+    z-index: 3;
+    bottom: 10px;
+    right: 10px;
+    max-width: 50%;
+}
+
+.new-user-join {
+    color: white;
+    background-color: #333333;
+    border: 0px;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-bottom: 2px;
+}
+
+.hidden {
+    display: none;
+}

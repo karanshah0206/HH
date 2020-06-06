@@ -63,7 +63,7 @@ window.addEventListener('load', () => {
                 socket.emit('newUserStart', {to:data.socketId, sender:socketId});
                 pc.push(data.socketId);
                 init(true, data.socketId);
-                alert('New user has joined: ' + data.username);
+                new_user(data);
             });
 
             socket.on('newUserStart', (data) => {
