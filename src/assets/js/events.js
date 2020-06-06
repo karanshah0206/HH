@@ -51,6 +51,7 @@ window.addEventListener('load', ()=>{
             document.getElementById('local').requestPictureInPicture()
             .catch(error => {
                 // Video failed to enter Picture-in-Picture mode.
+                alert('Failed to enter picture in picture mode.')
                 console.error(error);
             });
         } 
@@ -59,6 +60,7 @@ window.addEventListener('load', ()=>{
             document.exitPictureInPicture()
             .catch(error => {
                 // Video failed to leave Picture-in-Picture mode.
+                alert('Failed to exit picture in picture mode.')
                 console.error(error);
             });
         }
