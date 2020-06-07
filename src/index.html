@@ -165,12 +165,12 @@
 
         function new_user (userInfo) {
             document.getElementById('new-user-manager').innerHTML += "<div class='new-user-join' id='" + userInfo.socketId + "'> " + userInfo.username + " has joined the call</div>";
-            fadeAction(userInfo.socketId);
+            fadeAction();
         }
     </script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script>
-        function fadeAction (fadeId) {
+        function fadeAction () {
             $(".new-user-join").fadeOut(5000, function() {
                 $(this).remove();
             });
