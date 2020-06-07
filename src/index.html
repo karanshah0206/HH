@@ -169,5 +169,13 @@
             document.getElementById('new-user-manager').innerHTML += "<div class='new-user-join' id='" + userInfo.socketId + "'> " + userInfo.username + " has joined the call</div>"
         }
     </script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+        $(".new-user-join").click(function() {
+            $(this).fadeOut(1000, function() {
+                $(this).remove();
+            });
+        });
+    </script>
 </body>
 </html>
