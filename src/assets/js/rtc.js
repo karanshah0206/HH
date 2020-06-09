@@ -352,11 +352,6 @@ window.addEventListener('load', () => {
             }
         });
 
-        // User Tab On/Off Controls
-        document.getElementById('toggle-user').addEventListener('click', (e) => {
-            document.getElementById('active_users').classList.toggle('hidden');
-        })
-
         // Video On/Off Controls
         document.getElementById('toggle-video').addEventListener('click', (e) => {
             e.preventDefault();
