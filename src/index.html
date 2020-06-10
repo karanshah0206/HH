@@ -156,6 +156,10 @@
             document.getElementById('new-user-manager').innerHTML += "<div class='new-user-join' id='" + userInfo.socketId + "'> " + userInfo.username + " has joined the call</div>";
             fadeAction();
         }
+
+        document.getElementById('local').addEventListener('click', () => {
+            document.getElementById('local').classList.toggle('mirror-mode');
+        });
     </script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script>
