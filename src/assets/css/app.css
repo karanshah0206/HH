@@ -18,7 +18,7 @@
     right: -100vw;
     bottom: 0;
     top: 40.5px;
-    z-index: 1000;
+    z-index: 2;
     position: fixed;
     color: #fff;
     padding-right: 5px;
@@ -84,23 +84,22 @@
 
 
 .remote-video{
-    width:100%;
+    width: 30vw;
     height:auto;
     max-height: 90vh;
 }
 
 
 .remote-video-controls{
-    position:absolute;
+    position: absolute;
     bottom: 0;
-    background-color:rgba(0, 0, 0, 0.5);
-    z-index:300000;
+    background-color:rgba(0, 0, 0, 0.2);
+    z-index: 1;
     padding: 10px;
     width: 100%;
     text-align: center;
     visibility: hidden;
 }
-
 
 .remote-video:hover + .remote-video-controls,
 .remote-video-controls:hover{
@@ -182,7 +181,7 @@
 .custom-modal {
     display: none;
     position: fixed;
-    z-index: 5;
+    z-index: 3;
     left: 0;
     top: 0;
     width: 100%;
@@ -210,7 +209,7 @@
     .chat-col{
         right: -100vw;
         width: 100vw;
-        z-index: 99999;
+        z-index: 2;
         transition: 0.3s;
         top: 47px;
     }
@@ -230,7 +229,7 @@
     
     .card-sm{
         max-width: 100%;
-        min-width: 50%;
+        width: 30vw !important;
     }
 
 
@@ -242,14 +241,14 @@
 
 @media (min-width:768px){
     .card{
-        width: 50%;
-        z-index: 1000;
+        width: 30vh !important;
+        z-index: 1;
     }
 }
 
 #new-user-manager {
     position: absolute;
-    z-index: 3;
+    z-index: 4;
     bottom: 10px;
     right: 10px;
     max-width: 50%;
@@ -277,4 +276,10 @@
 
 .user-toggler:hover {
     background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+@media (max-width: 768px) {
+    .user-toggler {
+        padding: 5px !important;
+    }
 }
