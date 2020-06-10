@@ -193,6 +193,10 @@
     .main {
         margin-top: 25px;
     }
+
+    #board {
+        top: 25px;
+    }
 }
 
 @keyframes animatetop {
@@ -282,4 +286,16 @@
     .user-toggler {
         padding: 5px !important;
     }
+}
+
+#board {
+    overflow: hidden;
+    position: absolute;
+    height: 90vh;
+    width: 70vw; 
+    right: 0;
+    top: 40px;
+    background-color: rgb(245, 245, 220);
+    margin: 0;
+    padding: 0;
 }
