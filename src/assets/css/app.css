@@ -57,14 +57,10 @@
     position: absolute;
     border: 0;
     border-top: 1px groove white;
+    border-right: 1px groove white;
+    border-bottom: 1px groove white;
     border-left: 1px groove white;
-    font-size: small;
-}
-
-.chat-box::placeholder{
-    font-size: small;
-    font-weight: lighter;
-    font-style: italic;
+    font-size: 10px;
 }
 
 .chat-box,
@@ -213,11 +209,12 @@
     }
 
     #chat-messages{
-        height: 60vh;
+        height: 70vh;
+        margin-bottom: 0;
     }
 
     .chat-box{
-        bottom: 90px;
+        bottom: 55px;
         margin-bottom: 0px;
     }
     
