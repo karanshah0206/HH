@@ -83,9 +83,6 @@ window.addEventListener('load', () => {
                         if (!document.getElementById('local').srcObject) {
                             h.setLocalStream(stream);
                         }
-                        if (!document.getElementById('local-hidden').srcObject) {
-                            h.setLocalStream(stream);
-                        }
 
                         //save my stream
                         myStream = stream;

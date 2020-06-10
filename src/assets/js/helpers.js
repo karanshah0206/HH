@@ -263,12 +263,9 @@ export default {
 
     setLocalStream(stream, mirrorMode=true){
         const localVidElem = document.getElementById('local');
-        const localVidElemH = document.getElementById('local-hidden');
         
         localVidElem.srcObject = stream;
-        localVidElemH.srcObject = stream;
         mirrorMode ? localVidElem.classList.add('mirror-mode') : localVidElem.classList.remove('mirror-mode');
-        mirrorMode ? localVidElemH.classList.add('mirror-mode') : localVidElemH.classList.remove('mirror-mode');
     },
 
 
