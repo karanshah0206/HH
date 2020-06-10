@@ -82,13 +82,11 @@
     padding-top: 40px;
 }
 
-
 .remote-video{
     width: 30vw;
     height:auto;
     max-height: 90vh;
 }
-
 
 .remote-video-controls{
     position: absolute;
@@ -106,14 +104,12 @@
     visibility: visible;
 }
 
-
 .local-video{
     bottom: 0;
     left: 0;
     position: fixed;
     width:15vw;
 }
-
 
 .mirror-mode{
     -ms-transform: scaleX(-1);
@@ -122,13 +118,11 @@
     transform: scaleX(-1);
 }
 
-
 .sender-info{
     font-size: smaller;
     margin-top: 5px;
     align-self: flex-end;
 }
-
 
 .msg{
     font-weight: 400;
@@ -137,11 +131,9 @@
     background-color: wheat;
 }
 
-
 .chat-card{
     border-radius: 6px;
 }
-
 
 .btn-no-effect:focus{
     box-shadow: none;
@@ -150,7 +142,6 @@
 .very-small{
     font-size: 6px !important;
 }
-
 
 #close-single-peer-btn {
     position: fixed;
@@ -162,24 +153,18 @@
     z-index: 100;
 }
 
-
 .pointer{
     cursor: pointer;
 }
 
-
 .record-option{
-    height: 200px;
-    border-radius: 10%;
-    border: 1px solid #17a2b8;
+    border: 1px solid #ffffff;
     cursor: pointer;
-    padding: 10px;
+    padding: 5px;
     vertical-align: middle;
 }
 
-
 .custom-modal {
-    display: none;
     position: fixed;
     z-index: 3;
     left: 0;
@@ -189,21 +174,27 @@
     overflow: auto;
 }
 
-
 .custom-modal-content {
-    background-color: #fefefe;
+    text-align: center;
+    background-color: #17a2b8;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #17a2b8;
-    width: 80%;
+    border-radius: 15px;
+    width: 40%;
+    color: #ffffff;
 }
 
+@media (max-width: 768px) {
+    .custom-modal-content {
+        width: 80%;
+    }
+}
 
 @keyframes animatetop {
     from {top: -300px; opacity: 0}
     to {top: 0; opacity: 1}
 }
-
 
 @media only screen and (max-width:767px){
     .chat-col{
@@ -232,12 +223,10 @@
         width: 30vw !important;
     }
 
-
     .local-video{
         width:40vw;
     }
 }
-
 
 @media (min-width:768px){
     .card{
