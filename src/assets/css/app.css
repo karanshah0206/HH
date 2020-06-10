@@ -75,7 +75,7 @@
 }
 
 .main{
-    padding-top: 40px;
+    margin-top: 40px;
 }
 
 .remote-video{
@@ -188,6 +188,10 @@
 @media (max-width: 768px) {
     .custom-modal-content {
         width: 80%;
+    }
+
+    .main {
+        margin-top: 25px;
     }
 }
 
