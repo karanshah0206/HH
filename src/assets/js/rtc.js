@@ -418,7 +418,8 @@ window.addEventListener('load', () => {
         // Record Button Control
         document.getElementById('record').addEventListener('click', (e) => {
             if (!mediaRecorder || mediaRecorder.state == 'inactive') {
-                h.toggleModal('recording-options-modal', true);
+                // h.toggleModal('recording-options-modal', true);
+                document.getElementById('recording-options-modal').classList.toggle('hidden');
             }
 
             else if (mediaRecorder.state == 'paused') {
