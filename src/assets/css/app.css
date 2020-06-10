@@ -105,10 +105,13 @@
 }
 
 .local-video{
-    bottom: 0;
-    left: 0;
+    top: 54px;
+    right: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
     position: fixed;
-    width:15vw;
+    max-height: 10vh;
+    z-index: 4;
 }
 
 .mirror-mode{
@@ -224,7 +227,13 @@
     }
 
     .local-video{
-        width:40vw;
+        top: 45px;
+        right: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: fixed;
+        max-height: 10vh;
+        z-index: 4;
     }
 }
 
