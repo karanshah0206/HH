@@ -275,13 +275,13 @@ export default {
     adjustVideoElemSize(){
         let elem = document.getElementsByClassName('card');
         let totalRemoteVideosDesktop = elem.length;
-        let newWidth = totalRemoteVideosDesktop <= 2 ? '50%' : (
-            totalRemoteVideosDesktop == 3 ? '33.33%' : (
-                totalRemoteVideosDesktop <= 8 ? '25%' : (
-                    totalRemoteVideosDesktop <= 15 ? '20%' : (
-                        totalRemoteVideosDesktop <= 18 ? '16%' : (
-                            totalRemoteVideosDesktop <= 23 ? '15%' : (
-                                totalRemoteVideosDesktop <= 32 ? '12%' : '10%'
+        let newWidth = totalRemoteVideosDesktop <= 2 ? '30vw' : (
+            totalRemoteVideosDesktop == 3 ? '30vw' : (
+                totalRemoteVideosDesktop <= 8 ? '30vw' : (
+                    totalRemoteVideosDesktop <= 15 ? '30vw' : (
+                        totalRemoteVideosDesktop <= 18 ? '30vw' : (
+                            totalRemoteVideosDesktop <= 23 ? '30vw' : (
+                                totalRemoteVideosDesktop <= 32 ? '30vw' : '30vw'
                             )
                         )
                     )
@@ -289,12 +289,10 @@ export default {
             )
         );
 
-
         for(let i = 0; i < totalRemoteVideosDesktop; i++){
             elem[i].style.width = newWidth;
         }
     },
-
 
     createDemoRemotes(str, total=6){
         let i = 0;
