@@ -14,6 +14,11 @@
     limitations under the License.
 */
 
+/* Chrome, Safari and Opera syntax */
+html {
+    background-color: #ffffff;
+}
+
 .chat-col{
     right: -100vw;
     bottom: 0;
@@ -185,6 +190,12 @@
     color: #ffffff;
 }
 
+.card-sm{
+    border: 0;
+    border-color: transparent !important;
+    background-color: transparent !important;
+}
+
 @media (max-width: 768px) {
     .custom-modal-content {
         width: 80%;
@@ -228,8 +239,10 @@
     }
     
     .card-sm{
-        max-width: 100%;
+        border: 0;
+        border-color: transparent !important;
         width: 30vw !important;
+        background-color: transparent !important;
     }
 
     .local-video{
