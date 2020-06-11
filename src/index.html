@@ -33,9 +33,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js'></script>
 </head>
-<body style="overflow: hidden;">
+<body style="overflow-x: hidden;">
+    <!-- Screen Orientation -->
+    <div id="majorResp">
+        <br><br><br><br><br><br><br><b>Heavy</b>Hurdle <u>only works in landscape mode</u> due to resolution issues with the vertical mode.
+    </div>
+    
     <!-- Screen Recording Feature -->
-    <div class="custom-modal hidden" id='recording-options-modal'>
+    <div class="custom-modal hidden resp" id='recording-options-modal'>
         <div class="custom-modal-content">
             <div style="margin-bottom: 10px;">
                 <span class="record-option" id='record-video' style="margin-right: 20%;">Record video</span>
@@ -46,7 +51,7 @@
     </div>
 
     <!-- Header -->
-    <nav class="navbar fixed-top bg-info rounded-0 d-print-none">
+    <nav class="navbar fixed-top bg-info rounded-0 d-print-none resp">
         <div class="text-white"><b>Heavy</b>Hurdle</div>
         <div class="pull-right room-comm" hidden>
             <button class="btn btn-sm rounded-0 btn-no-effect" style="padding: 0 !important; margin: 0 !important;" title="Hide Video">
@@ -71,7 +76,7 @@
     </nav>
 
     <!-- Create Room -->
-    <div class="container-fluid" id='room-create' style="margin-top: 50px;" hidden>
+    <div class="container-fluid resp" id='room-create' style="margin-top: 50px;" hidden>
         <div class="row">
             <div class="col-12 h2 mt-5 text-center">New Conference</div>
         </div>
@@ -95,7 +100,7 @@
     </div>
 
     <!-- Join Room -->
-    <div class="container-fluid" id='username-set' style="margin-top: 50px;" hidden>
+    <div class="container-fluid resp" id='username-set' style="margin-top: 50px;" hidden>
         <div class="row">
             <div class="col-12 h4 mt-5 text-center">Your Name</div>
         </div>
@@ -114,14 +119,14 @@
     </div>
 
     <!-- In Conference  -->
-    <div class="container-fluid room-comm" hidden>
+    <div class="container-fluid room-comm resp" hidden>
         <div class="row">
             <video class="local-video mirror-mode" id='local' volume='0' autoplay muted></video>
         </div>
 
         <div class="row">
             <div class="col-md-12 main" id='main-section'>
-                <div class="row mt-2 mb-2" id='videos' style="height: 90vh !important; overflow-y: scroll; overflow-x: hidden; min-width: 30vW !important; max-width: 30vw !important;"></div>
+                <div class="row mt-2 mb-2" id='videos' style="height: 90vh !important; min-width: 30vW !important; max-width: 30vw !important; overflow-y: scroll; overflow-x: hidden;"></div>
             </div>
 
             <!-- Chat Panel -->
@@ -136,12 +141,13 @@
             </div>
         </div>
 
-        <div id="board">
+        <div id="board" class="resp">
             <!-- White Board Here -->
+            <iframe id="board-child" src="https://www.groupboard.com/gb/799031" scrolling="no" frameborder="0" height="100%" width="100%"></iframe>
         </div>
     </div>
 
-    <div id="new-user-manager">
+    <div id="new-user-manager" class="resp">
         <!-- Auto-Generates When User Joins -->
     </div>
 
