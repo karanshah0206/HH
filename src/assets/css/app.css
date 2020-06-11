@@ -294,8 +294,30 @@
     height: 90vh;
     width: 70vw; 
     right: 0;
-    top: 40px;
+    top: 60px;
     background-color: rgb(245, 245, 220);
     margin: 0;
     padding: 0;
+}
+
+#majorResp {
+    display: none;
+}
+
+@media screen and (max-width: 550px) {
+    #majorResp {
+        display: block;
+        height: 100vh;
+        width: 100vw;
+        padding-left: 20vw;
+        padding-right: 20vw;
+        overflow: hidden;
+        text-align: center;
+        background-color: #17a2b8;
+        color: white;
+        user-select: none;
+    }
+    .resp {
+        display: none;
+    }
 }
