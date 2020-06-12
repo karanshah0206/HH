@@ -296,14 +296,14 @@ window.addEventListener('load', () => {
 
             if (isRecording) {
                 e.setAttribute('title', 'Stop recording');
-                e.children[0].classList.add('text-danger');
-                e.children[0].classList.remove('text-white');
+                e.classList.add('text-danger');
+                e.classList.remove('text-white');
             }
 
             else {
                 e.setAttribute('title', 'Record');
-                e.children[0].classList.add('text-white');
-                e.children[0].classList.remove('text-danger');
+                e.classList.add('text-white');
+                e.classList.remove('text-danger');
             }
         }
 
