@@ -25,7 +25,7 @@ const stream = (socket) => {
             socket.to(data.room).emit('new user', {socketId:data.socketId, username:data.uName});
         }
 
-        console.log(socket.rooms);
+        // console.log(socket.rooms);
     });
 
     // New User
