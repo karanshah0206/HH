@@ -196,18 +196,19 @@ export default {
 
 
     toggleShareIcons(share){
-        let shareIconElem = document.querySelector('#share-screen');
+        // let shareIconElem = document.querySelector('#share-screen');
+        let shareIconElem = document.getElementById('share-screen');
         
         if(share){
             shareIconElem.setAttribute('title', 'Stop sharing screen');
-            shareIconElem.children[0].classList.add('text-primary');
-            shareIconElem.children[0].classList.remove('text-white');
+            shareIconElem.classList.add('text-primary');
+            shareIconElem.classList.remove('text-white');
         }
 
         else{
             shareIconElem.setAttribute('title', 'Share screen');
-            shareIconElem.children[0].classList.add('text-white');
-            shareIconElem.children[0].classList.remove('text-primary');
+            shareIconElem.classList.add('text-white');
+            shareIconElem.classList.remove('text-primary');
         }
     },
 
