@@ -349,6 +349,14 @@ window.addEventListener('load', () => {
             }
         });
 
+        document.getElementById('chat-sender').addEventListener('click', () => {
+            sendMsg(document.getElementById('chat-input').value);
+
+            setTimeout(() => {
+                document.getElementById('chat-input').value = '';
+            }, 50);
+        });
+
         // Video On/Off Controls
         document.getElementById('toggle-video').addEventListener('click', (e) => {
             e.preventDefault();
