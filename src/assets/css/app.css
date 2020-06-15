@@ -56,9 +56,18 @@ html {
     background: transparent;
 }
 
-.chat-box{
+#chat-sender {
     bottom: 30px;
     right: 0;
+    position: absolute;
+    border: 0;
+}
+
+.chat-box{
+    width: 80% !important;
+    height: 10vh !important;
+    bottom: 30px;
+    left: 0;
     position: absolute;
     border: 0;
     border-top: 1px groove white;
@@ -196,6 +205,11 @@ html {
     background-color: transparent !important;
 }
 
+#chat-sender {
+    width: 20%;
+    height: 10vh;
+}
+
 @media (max-width: 768px) {
     .custom-modal-content {
         width: 80%;
@@ -230,6 +244,11 @@ html {
 
     #chat-messages{
         height: 70vh;
+        margin-bottom: 0;
+    }
+
+    #chat-sender {
+        bottom: 55px;
         margin-bottom: 0;
     }
 
