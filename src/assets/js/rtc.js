@@ -123,7 +123,7 @@ window.addEventListener('load', () => {
             });
         }
 
-        // Send Chat Messagee
+        // Send Chat Message
         function sendMsg(msg) {
             let data = {
                 room: room,
