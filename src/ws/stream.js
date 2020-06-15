@@ -47,6 +47,11 @@ const stream = (socket) => {
     socket.on('chat', (data)=>{
         socket.to(data.room).emit('chat', {sender: data.sender, msg: data.msg});
     });
+
+    // Board
+    socket.on('boardControls', (data) => {
+        socket.to(data.room).emit('boardControls', (data.option));
+    })
 }
 
 module.exports = stream;
