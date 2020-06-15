@@ -47,23 +47,19 @@ window.addEventListener('load', ()=>{
 
     //When the video frame is clicked. This will enable picture-in-picture
     document.getElementById('local').addEventListener('click', ()=>{
-        document.getElementById('local').classList.remove('mirror-mode');
         if (!document.pictureInPictureElement) {
             document.getElementById('local').requestPictureInPicture()
             .catch(error => {
                 // Video failed to enter Picture-in-Picture mode.
-                alert('Failed to enter picture in picture mode.')
-                console.error(error);
+                alert('Cannot Enter Picture In Picture Mode. Error: ' + error);
             });
         }
 
         else {
-            document.getElementById('local').classList.add('mirror-mode');
             document.exitPictureInPicture()
             .catch(error => {
                 // Video failed to leave Picture-in-Picture mode.
-                alert('Failed to exit picture in picture mode.')
-                console.error(error);
+                alert('Failed to exit picture in picture mode. Error: ' + error);
             });
         }
     });
