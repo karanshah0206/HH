@@ -64,6 +64,7 @@ window.addEventListener('load', () => {
                 pc.push(data.socketId);
                 init(true, data.socketId);
                 new_user(data);
+                newBoarder();
             });
 
             socket.on('newUserStart', (data) => {
@@ -109,6 +110,15 @@ window.addEventListener('load', () => {
             // Chat
             socket.on('chat', (data) => {
                 h.addChat(data, 'remote');
+            })
+
+            // Board
+            socket.on('boardControls', (option) => {
+                if (option) {
+                    setUpBoard();
+                } else {
+                    removeBoard();
+                }
             })
         });
 
@@ -334,7 +344,6 @@ window.addEventListener('load', () => {
             }
         }
 
-
         // Chat Area
         document.getElementById('chat-input').addEventListener('keypress', (e) => {
             if (e.which === 13 && (e.target.value.trim())) {
@@ -355,6 +364,34 @@ window.addEventListener('load', () => {
                 document.getElementById('chat-input').value = '';
             }, 50);
         });
+
+        // Whiteboard On/Off Controls
+        document.getElementById('toggle-board').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('toggle-board').classList.toggle('bg-primary');
+            if (document.getElementById('toggle-board').classList.contains('bg-primary')) {
+                socket.emit('boardControls', {room: room, option: true});
+                setUpBoard();
+            } else {
+                socket.emit('boardControls', {room: room, option: false});
+                removeBoard();
+            }
+        });
+        function setUpBoard () {
+            document.getElementById('toggle-board').classList.add('bg-primary');
+        }
+        function removeBoard () {
+            document.getElementById('toggle-board').classList.remove('bg-primary');
+        }
+        function newBoarder () {
+            if (document.getElementById('toggle-board').classList.contains('bg-primary')) {
+                socket.emit('boardControls', {room: room, option: true});
+                setUpBoard();
+            } else {
+                socket.emit('boardControls', {room: room, option: false});
+                removeBoard();
+            }
+        }
 
         // Video On/Off Controls
         document.getElementById('toggle-video').addEventListener('click', (e) => {
