@@ -14,6 +14,8 @@
     limitations under the License.
 */
 
+var today = new Date();
+
 const stream = (socket) => {
     socket.on('subscribe', (data) => {
         // Join a room
@@ -25,7 +27,7 @@ const stream = (socket) => {
             socket.to(data.room).emit('new user', {socketId:data.socketId, username:data.uName});
         }
 
-        // console.log(socket.rooms);
+        console.log("User Named (" + data.uName + ") Joined Room (" + data.room + ") With Socket ID (" + data.socketId + ") At (" + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds() +") On (" + today.getFullYear() + "/" + (today.getMonth()+1) + "/" + today.getDate() + ") India Standard Time.");
     });
 
     // New User
