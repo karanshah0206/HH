@@ -112,6 +112,10 @@ html {
     visibility: hidden;
 }
 
+.remote-video-controls i {
+    cursor: pointer;
+}
+
 .remote-video:hover + .remote-video-controls,
 .remote-video-controls:hover{
     visibility: visible;
