@@ -353,3 +353,11 @@ html {
         display: none;
     }
 }
+
+.onBoard {
+    height: 90vh !important;
+    min-width: 30vW !important;
+    max-width: 30vw !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
