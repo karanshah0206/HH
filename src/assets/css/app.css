@@ -324,7 +324,7 @@ html {
     background-color: rgba(255, 255, 255, 0.2) !important;
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width:767px){
     .user-toggler {
         padding: 5px !important;
     }
@@ -334,7 +334,7 @@ html {
     overflow: hidden;
     position: absolute;
     height: 90vh;
-    width: 70vw; 
+    width: 80vw;
     right: 0;
     top: 60px;
     margin: 0;
@@ -364,5 +364,22 @@ html {
 }
 
 .onBoard {
-    height: 90vh !important; min-width: 30vW !important; max-width: 30vw !important; overflow-y: scroll; overflow-x: hidden;
+    height: 90vh !important; min-width: 20vW !important; max-width: 20vw !important; overflow-y: scroll; overflow-x: hidden;
+}
+
+@media only screen and (max-width:1000px){
+    .onBoard {
+        height: 90vh !important; min-width: 30vW !important; max-width: 30vw !important; overflow-y: scroll; overflow-x: hidden;
+    }
+
+    #board {
+        overflow: hidden;
+        position: absolute;
+        height: 90vh;
+        width: 70vw; 
+        right: 0;
+        top: 60px;
+        margin: 0;
+        padding: 0;
+    }
 }
