@@ -94,9 +94,10 @@ html {
 
 .remote-video{
     z-index: 1;
-    width: 30vw;
-    height:auto;
-    max-height: 90vh;
+    width: 100%;
+    max-width: 30vw;
+    height: 0 auto;
+    margin: 0;
 }
 
 .remote-video-controls{
@@ -105,7 +106,8 @@ html {
     background-color:rgba(0, 0, 0, 0.2);
     z-index: 2;
     padding: 10px;
-    width: 30vw;
+    width: 100%;
+    max-width: 30vw;
     text-align: center;
     visibility: hidden;
 }
@@ -200,9 +202,13 @@ html {
 }
 
 .card-sm{
+    width: 100%;
+    max-width: 30vw;
     border: 0;
     border-color: transparent !important;
     background-color: transparent !important;
+    margin: 0;
+    padding: 0;
 }
 
 #chat-sender {
@@ -260,8 +266,11 @@ html {
     .card-sm{
         border: 0;
         border-color: transparent !important;
-        width: 30vw !important;
+        width: 100%;
+        max-width: 30vw;
         background-color: transparent !important;
+        margin: 0;
+        padding: 0;
     }
 
     .local-video{
@@ -275,11 +284,12 @@ html {
     }
 }
 
-@media (min-width:768px){
-    .card{
-        width: 30vh !important;
-        z-index: 1;
-    }
+.card{
+    width: 100%;
+    max-width: 30vw;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
 }
 
 #new-user-manager {
