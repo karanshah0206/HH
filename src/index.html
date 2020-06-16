@@ -21,17 +21,17 @@
 
     <title>HeavyHurdle</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel='stylesheet' href='assets/css/app.css' type="text/css">
-    <link rel='icon' href='assets/img/ico.png'>
-
     <script src='/socket.io/socket.io.js'></script>
     <script type="module" src='assets/js/rtc.js'></script>
     <script type="module" src='assets/js/events.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/7.3.0/adapter.min.js" integrity="sha256-2qQheewaqnZlXJ3RJRghVUwD/3fD9HNqxh4C+zvgmF4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js'></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel='stylesheet' href='assets/css/app.css' type="text/css">
+    <link rel='icon' href='assets/img/ico.png'>
 </head>
 <body style="overflow-x: hidden; background-color: #ffffff;" id="superParent">
     <!-- Screen Orientation -->
@@ -133,7 +133,7 @@
 
         <div class="row">
             <div class="col-md-12 main" id='main-section'>
-                <div class="row onBoard" id='videos'></div>
+                <div class="onBoard row mt-2 mb-2" id='videos'></div>
             </div>
 
             <!-- Chat Panel -->
