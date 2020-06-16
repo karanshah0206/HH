@@ -201,16 +201,6 @@ html {
     color: #ffffff;
 }
 
-.card-sm{
-    width: 100%;
-    max-width: 30vw;
-    border: 0;
-    border-color: transparent !important;
-    background-color: transparent !important;
-    margin: 0;
-    padding: 0;
-}
-
 #chat-sender {
     width: 20%;
     height: 10vh;
@@ -261,16 +251,6 @@ html {
     .chat-box{
         bottom: 55px;
         margin-bottom: 0px;
-    }
-    
-    .card-sm{
-        border: 0;
-        border-color: transparent !important;
-        width: 100%;
-        max-width: 30vw;
-        background-color: transparent !important;
-        margin: 0;
-        padding: 0;
     }
 
     .local-video{
