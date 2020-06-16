@@ -96,7 +96,7 @@ html {
     z-index: 1;
     width: 100%;
     max-width: 30vw;
-    height: 0 auto;
+    height: auto;
     margin: 0;
 }
 
@@ -364,12 +364,12 @@ html {
 }
 
 .onBoard {
-    height: 90vh !important; min-width: 20vW !important; max-width: 20vw !important; overflow-y: scroll; overflow-x: hidden;
+    min-height: 0; max-height: 90vh !important; min-width: 20vW !important; max-width: 20vw !important; overflow-y: auto; overflow-x: hidden;
 }
 
 @media only screen and (max-width:1000px){
     .onBoard {
-        height: 90vh !important; min-width: 30vW !important; max-width: 30vw !important; overflow-y: scroll; overflow-x: hidden;
+        height: 90vh !important; min-width: 30vW !important; max-width: 30vw !important; overflow-y: auto; overflow-x: hidden;
     }
 
     #board {
