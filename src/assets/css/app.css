@@ -355,8 +355,5 @@ html {
 }
 
 .onBoard {
-    height: 90vh;
-    width: 30vw;
-    overflow-y: auto;
-    overflow-x: hidden;
+    height: 90vh !important; min-width: 30vW !important; max-width: 30vw !important; overflow-y: scroll; overflow-x: hidden;
 }
