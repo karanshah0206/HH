@@ -210,12 +210,19 @@
         });
     </script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         function fadeAction () {
             $(".new-user-join").fadeOut(5000, function() {
                 $(this).remove();
             });
         }
+        $(document).ready(function() {
+            $("#videos").sortable();
+            $("#videos").disableSelection();
+            $("#local").draggable();
+            $("#local").disableSelection();
+        });
     </script>
 </body>
 </html>

@@ -271,25 +271,25 @@ export default {
 
 
     adjustVideoElemSize(){
-        let elem = document.getElementsByClassName('card');
-        let totalRemoteVideosDesktop = elem.length;
-        let newWidth = totalRemoteVideosDesktop <= 2 ? '30vw' : (
-            totalRemoteVideosDesktop == 3 ? '30vw' : (
-                totalRemoteVideosDesktop <= 8 ? '30vw' : (
-                    totalRemoteVideosDesktop <= 15 ? '30vw' : (
-                        totalRemoteVideosDesktop <= 18 ? '30vw' : (
-                            totalRemoteVideosDesktop <= 23 ? '30vw' : (
-                                totalRemoteVideosDesktop <= 32 ? '30vw' : '30vw'
-                            )
-                        )
-                    )
-                )
-            )
-        );
+        // let elem = document.getElementsByClassName('card');
+        // let totalRemoteVideosDesktop = elem.length;
+        // let newWidth = totalRemoteVideosDesktop <= 2 ? '30vw' : (
+        //     totalRemoteVideosDesktop == 3 ? '30vw' : (
+        //         totalRemoteVideosDesktop <= 8 ? '30vw' : (
+        //             totalRemoteVideosDesktop <= 15 ? '30vw' : (
+        //                 totalRemoteVideosDesktop <= 18 ? '30vw' : (
+        //                     totalRemoteVideosDesktop <= 23 ? '30vw' : (
+        //                         totalRemoteVideosDesktop <= 32 ? '30vw' : '30vw'
+        //                     )
+        //                 )
+        //             )
+        //         )
+        //     )
+        // );
 
-        for(let i = 0; i < totalRemoteVideosDesktop; i++){
-            elem[i].style.width = newWidth;
-        }
+        // for(let i = 0; i < totalRemoteVideosDesktop; i++){
+        //     elem[i].style.width = newWidth;
+        // }
     },
 
     createDemoRemotes(str, total=6){
@@ -310,7 +310,7 @@ export default {
             
             //create a new div for card
             let cardDiv = document.createElement('div');
-            cardDiv.className = 'card card-sm';
+            cardDiv.className = 'card';
             cardDiv.id = `demo-${i}`;
             cardDiv.appendChild(newVid);
             cardDiv.appendChild(controlDiv);
