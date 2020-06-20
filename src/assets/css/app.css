@@ -348,19 +348,23 @@ html {
 }
 
 .onBoard {
-    min-height: 0; max-height: 90vh !important; min-width: 20vW !important; max-width: 20vw !important; overflow-y: auto; overflow-x: hidden;
+    min-height: 0; max-height: 90vh; min-width: 20vW; max-width: 20vw; overflow-y: auto; overflow-x: hidden;
 }
 
-@media only screen and (max-width:1000px){
+.offBoard {
+    min-height: 0; max-height: 90vh; min-width: 90vW; max-width: 90vw; overflow-y: auto; overflow-x: hidden;
+}
+
+@media (max-width:1000px) {
     .onBoard {
-        height: 90vh !important; min-width: 30vW !important; max-width: 30vw !important; overflow-y: auto; overflow-x: hidden;
+        height: 90vh; min-width: 30vW; max-width: 30vw; overflow-y: auto; overflow-x: hidden;
     }
 
     #board {
         overflow: hidden;
         position: absolute;
         height: 90vh;
-        width: 70vw; 
+        width: 70vw;
         right: 0;
         top: 60px;
         margin: 0;
