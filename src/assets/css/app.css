@@ -352,7 +352,7 @@ html {
 }
 
 .offBoard {
-    min-height: 0; max-height: 90vh; min-width: 90vW; max-width: 90vw; overflow-y: auto; overflow-x: hidden;
+    min-height: 0; max-height: 90vh; min-width: 92vW; max-width: 92vw; overflow-y: auto; overflow-x: hidden;
 }
 
 @media (max-width:1000px) {
