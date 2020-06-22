@@ -59,3 +59,8 @@ $(document).ready(function() {
     $("#local").draggable();
     $("#local").disableSelection();
 });
+
+window.addEventListener('load', () => {
+    var today = new Date();
+    document.getElementById('yearInsert').innerText = today.getFullYear();
+})
