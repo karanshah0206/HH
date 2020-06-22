@@ -214,10 +214,6 @@ html {
 }
 
 @media only screen and (max-width:767px){
-    .and-hide {
-        display: none;
-    }
-
     .chat-col{
         right: -100vw;
         width: 100vw;
@@ -344,6 +340,10 @@ html {
 }
 
 @media (max-width:1000px) {
+    .and-hide {
+        display: none;
+    }
+
     .onBoard {
         height: 90vh; min-width: 30vW; max-width: 30vw; overflow-y: auto; overflow-x: hidden;
     }
