@@ -379,9 +379,15 @@ window.addEventListener('load', () => {
         });
         function setUpBoard () {
             document.getElementById('toggle-board').classList.add('bg-primary');
+            document.getElementById('board').classList.remove('hidden');
+            document.getElementById('videos').classList.remove('offBoard');
+            document.getElementById('videos').classList.add('onBoard');
         }
         function removeBoard () {
             document.getElementById('toggle-board').classList.remove('bg-primary');
+            document.getElementById('board').classList.add('hidden');
+            document.getElementById('videos').classList.remove('onBoard');
+            document.getElementById('videos').classList.add('offBoard');
         }
         function newBoarder () {
             if (document.getElementById('toggle-board').classList.contains('bg-primary')) {
