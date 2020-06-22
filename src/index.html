@@ -72,19 +72,23 @@
             <div class="col-12 h2 mt-5 text-center">New Conference</div>
         </div>
         <div class="row mt-2">
-            <div class="col-12 text-center">
-                <span class="form-text small text-danger" id='err-msg'></span>
-            </div>
             <div class="col-12 col-md-4 offset-md-4 mb-3">
-                <label for="room-name">Room Name</label>
-                <input type="text" id='room-name' class="form-control rounded-0" placeholder="Room Name">
-            </div>
-            <div class="col-12 col-md-4 offset-md-4 mb-3">
-                <label for="your-name">Your Name</label>
-                <input type="text" id='your-name' class="form-control rounded-0" placeholder="Your Name">
-            </div>
-            <div class="col-12 col-md-4 offset-md-4 mb-3">
-                <button id='create-room' class="btn btn-block rounded-0 btn-info">Create Conference</button>
+                <form class="form">
+                    <div class="form-group text-center">
+                        <span class="form-text small text-danger" id='err-msg'></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="room-name">Room Name</label>
+                        <input type="text" id='room-name' class="form-control rounded-0" placeholder="Room Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="your-name">Your Name</label>
+                        <input type="text" id='your-name' class="form-control rounded-0" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" id="create-room" class="btn btn-block rounded-0 btn-info" value="Create Conference">
+                    </div>
+                </form>
             </div>
             <div class="col-12 col-md-4 offset-md-4 mb-3" id='room-created'></div>
         </div>
