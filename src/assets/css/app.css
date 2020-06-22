@@ -230,6 +230,10 @@ html {
 }
 
 @media only screen and (max-width:767px){
+    .and-hide {
+        display: none;
+    }
+
     .chat-col{
         right: -100vw;
         width: 100vw;
