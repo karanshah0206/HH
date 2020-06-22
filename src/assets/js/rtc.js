@@ -6,10 +6,12 @@ window.addEventListener('load', () => {
 
     if (!room) {
         document.querySelector('#room-create').attributes.removeNamedItem('hidden');
+        document.getElementById('globalFooter').classList.remove('hidden');
     }
 
     else if (!username) {
         document.querySelector('#username-set').attributes.removeNamedItem('hidden');
+        document.getElementById('globalFooter').classList.remove('hidden');
     }
 
     else {
