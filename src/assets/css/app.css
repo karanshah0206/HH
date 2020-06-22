@@ -1,6 +1,11 @@
 /* Chrome, Safari and Opera syntax */
 html {
     background-color: #ffffff;
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
 .chat-col{
