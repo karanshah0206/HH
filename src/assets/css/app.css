@@ -289,6 +289,10 @@ html {
     padding: 0;
 }
 
+#board-child {
+    cursor: crosshair;
+}
+
 #majorResp {
     display: none;
 }
