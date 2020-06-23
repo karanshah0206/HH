@@ -69,7 +69,7 @@ html {
 }
 
 .main{
-    margin-top: 60px;
+    margin-top: 55px;
 }
 
 .remote-video{
@@ -196,11 +196,9 @@ html {
     }
 
     .main {
-        margin-top: 25px;
-    }
-
-    #board {
-        top: 25px;
+        margin: 0;
+        margin-top: 45px;
+        padding: 0;
     }
 }
 
@@ -274,6 +272,10 @@ html {
     .user-toggler {
         padding: 5px !important;
     }
+
+    #board {
+        top: 45px !important;
+    }
 }
 
 #board {
@@ -282,7 +284,7 @@ html {
     height: 90vh;
     width: 80vw;
     right: 0;
-    top: 60px;
+    top: 55px;
     margin: 0;
     padding: 0;
 }
@@ -327,13 +329,6 @@ html {
     }
 
     #board {
-        overflow: hidden;
-        position: absolute;
-        height: 90vh;
         width: 70vw;
-        right: 0;
-        top: 60px;
-        margin: 0;
-        padding: 0;
     }
 }
