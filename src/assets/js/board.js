@@ -51,3 +51,15 @@ document.getElementById('zoom-out-board-btn').addEventListener('click', () => {
     canvas.setWidth(1500 * canvas.getZoom());
     canvas.setHeight(3000 * canvas.getZoom());
 })
+
+// Adding Square
+document.getElementById('square-board-btn').addEventListener('click', () => {
+    var square = new fabric.Rect({
+        width:50,
+        height:50,
+        fill:document.getElementById('color-picker').style.backgroundColor,
+        top:100,
+        left:100
+    })
+    canvas.add(square);
+})
