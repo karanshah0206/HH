@@ -68,6 +68,7 @@ document.getElementById('square-board-btn').addEventListener('click', () => {
         left:50
     })
     canvas.add(square);
+    enablePointer();
 })
 
 // Adding Circle
@@ -79,4 +80,13 @@ document.getElementById('circle-board-btn').addEventListener('click', () => {
         left:50
     })
     canvas.add(circle);
+    enablePointer();
 })
+
+// Mouse Pointer
+function enablePointer () {
+    document.getElementById('tool-picker').classList.remove('fa-pen');
+    document.getElementById('tool-picker').classList.remove('fa-eraser');
+    document.getElementById('tool-picker').classList.add('fa-mouse-pointer');
+    canvas.isDrawingMode = false;
+}
