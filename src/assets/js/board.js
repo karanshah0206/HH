@@ -26,6 +26,11 @@ document.getElementById('zoom-in-board-btn').addEventListener('click', () => {
         currentZoom *= 2;
     }
     canvas.setZoom(currentZoom);
+    if (currentZoom!= 1) {
+        document.getElementById('zoom-info').innerText = 'Zoom: ' + currentZoom + 'x';
+    } else {
+        document.getElementById('zoom-info').innerText = '';
+    }
     canvas.setWidth(1500 * canvas.getZoom());
     canvas.setHeight(3000 * canvas.getZoom());
 })
@@ -38,6 +43,11 @@ document.getElementById('zoom-out-board-btn').addEventListener('click', () => {
         currentZoom /= 2;
     }
     canvas.setZoom(currentZoom);
+    if (currentZoom!= 1) {
+        document.getElementById('zoom-info').innerText = 'Zoom: ' + currentZoom + 'x';
+    } else {
+        document.getElementById('zoom-info').innerText = '';
+    }
     canvas.setWidth(1500 * canvas.getZoom());
     canvas.setHeight(3000 * canvas.getZoom());
 })
