@@ -101,3 +101,12 @@ function enableDrawing () {
     canvas.isDrawingMode = true;
     canvas.freeDrawingBrush.color = activeColor;
 }
+
+// Eraser
+function enableEraser () {
+    document.getElementById('tool-picker').classList.remove('fa-mouse-pointer');
+    document.getElementById('tool-picker').classList.remove('fa-pen');
+    document.getElementById('tool-picker').classList.add('fa-eraser');
+    canvas.isDrawingMode = true;
+    canvas.freeDrawingBrush.color = 'rgb(245, 245, 220)';
+}
