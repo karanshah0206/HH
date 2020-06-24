@@ -15,3 +15,12 @@ document.getElementById('download-board-btn').addEventListener('click', () => {
     link.click();
     $('#downloadTemp').remove();
 })
+
+var currentZoom = 1;
+
+// Zoom In
+document.getElementById('zoom-in-board-btn').addEventListener('click', () => {
+    currentZoom += 0.5;
+    canvas.setZoom(currentZoom);
+    console.log(currentZoom);
+})
