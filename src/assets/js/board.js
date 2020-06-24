@@ -26,7 +26,8 @@ document.getElementById('zoom-in-board-btn').addEventListener('click', () => {
         currentZoom *= 2;
     }
     canvas.setZoom(currentZoom);
-    console.log(currentZoom);
+    canvas.setWidth(1500 * canvas.getZoom());
+    canvas.setHeight(3000 * canvas.getZoom());
 })
 
 // Zoom Out
@@ -37,5 +38,6 @@ document.getElementById('zoom-out-board-btn').addEventListener('click', () => {
         currentZoom /= 2;
     }
     canvas.setZoom(currentZoom);
-    console.log(currentZoom);
+    canvas.setWidth(1500 * canvas.getZoom());
+    canvas.setHeight(3000 * canvas.getZoom());
 })
