@@ -291,12 +291,9 @@ html {
 }
 
 #board-child {
-    cursor: crosshair;
+    background-color: rgb(245, 245, 220);
     margin: 0;
     padding: 0;
-    height: 5000px;
-    width: 5000px;
-    background-color: rgb(245, 245, 220);
 }
 
 #majorResp {
