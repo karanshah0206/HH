@@ -55,6 +55,7 @@ document.getElementById('zoom-out-board-btn').addEventListener('click', () => {
 // Color Picker
 function colorChange (data) {
     document.getElementById('color-picker').style.backgroundColor = data;
+    canvas.freeDrawingBrush.color = data;
 }
 
 // Adding Square
