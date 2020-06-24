@@ -52,6 +52,11 @@ document.getElementById('zoom-out-board-btn').addEventListener('click', () => {
     canvas.setHeight(3000 * canvas.getZoom());
 })
 
+// Color Picker
+function colorChange (data) {
+    document.getElementById('color-picker').style.backgroundColor = data;
+}
+
 // Adding Square
 document.getElementById('square-board-btn').addEventListener('click', () => {
     var square = new fabric.Rect({

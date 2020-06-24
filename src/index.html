@@ -160,11 +160,12 @@
                 <button class="btn btn-warning" title="Zoom Out" id="zoom-out-board-btn"><i class="fa fa-search-minus"></i></button>
                 <div class="dropup">
                     <button id="color-picker" class="btn btn-default dropbtn" title="Color Picker" style="background-color: rgb(0, 0, 0); color: white;"><i class="fa fa-tint"></i></button>
-                    <div class="dropup-content">
-                        <button class="btn btn-default rounded-0" style="margin-top: 5px; background-color: rgb(231, 231, 87); color: white;"><i class="fa fa-tint"></i></button>
-                        <button class="btn btn-default rounded-0" style="background-color: rgb(97, 212, 97); color: white;"><i class="fa fa-tint"></i></button>
-                        <button class="btn btn-default rounded-0" style="background-color: rgb(102, 197, 235); color: white;"><i class="fa fa-tint"></i></button>
-                        <button class="btn btn-default rounded-0" style="background-color: rgb(255, 0, 0); color: white;"><i class="fa fa-tint"></i></button>
+                    <div class="dropup-content" id="color-picker-options">
+                        <button class="btn btn-default rounded-0" style="margin-top: 5px; background-color: rgb(231, 231, 87); color: white;" onclick="colorChange('rgb(231, 231, 87)');"><i class="fa fa-tint"></i></button>
+                        <button class="btn btn-default rounded-0" style="background-color: rgb(97, 212, 97); color: white;" onclick="colorChange('rgb(97, 212, 97)');"><i class="fa fa-tint"></i></button>
+                        <button class="btn btn-default rounded-0" style="background-color: rgb(102, 197, 235); color: white;" onclick="colorChange('rgb(102, 197, 235)');"><i class="fa fa-tint"></i></button>
+                        <button class="btn btn-default rounded-0" style="background-color: rgb(255, 0, 0); color: white;" onclick="colorChange('rgb(255, 0, 0)');"><i class="fa fa-tint"></i></button>
+                        <button class="btn btn-default rounded-0" style="background-color: rgb(0, 0, 0); color: white;" onclick="colorChange('rgb(0, 0, 0)');"><i class="fa fa-tint"></i></button>
                     </div>
                 </div>
                 <div class="dropup">
