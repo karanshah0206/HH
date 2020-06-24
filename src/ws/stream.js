@@ -19,23 +19,23 @@ const stream = (socket) => {
         socket.to(data.to).emit('newUserStart', {sender:data.sender});
     });
 
-    socket.on('sdp', (data)=>{
+    socket.on('sdp', (data) => {
         socket.to(data.to).emit('sdp', {description: data.description, sender:data.sender});
     });
 
-    socket.on('ice candidates', (data)=>{
+    socket.on('ice candidates', (data) => {
         socket.to(data.to).emit('ice candidates', {candidate:data.candidate, sender:data.sender});
     });
 
     // Chat
-    socket.on('chat', (data)=>{
+    socket.on('chat', (data) => {
         socket.to(data.room).emit('chat', {sender: data.sender, msg: data.msg});
     });
 
     // Board
     socket.on('boardControls', (data) => {
         socket.to(data.room).emit('boardControls', (data.option));
-    })
+    });
 }
 
 module.exports = stream;
