@@ -296,6 +296,13 @@ html {
     padding: 0;
 }
 
+#board-controls {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1;
+}
+
 #majorResp {
     display: none;
 }
@@ -336,6 +343,7 @@ html {
     }
 
     #board {
+        height: 80vh;
         width: 70vw;
     }
 }
