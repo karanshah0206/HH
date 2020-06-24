@@ -20,7 +20,22 @@ var currentZoom = 1;
 
 // Zoom In
 document.getElementById('zoom-in-board-btn').addEventListener('click', () => {
-    currentZoom += 0.5;
+    if (currentZoom >= 0.5) {
+        currentZoom += 0.5;
+    } else {
+        currentZoom *= 2;
+    }
+    canvas.setZoom(currentZoom);
+    console.log(currentZoom);
+})
+
+// Zoom Out
+document.getElementById('zoom-out-board-btn').addEventListener('click', () => {
+    if (currentZoom > 0.5) {
+        currentZoom -= 0.5;
+    } else {
+        currentZoom /= 2;
+    }
     canvas.setZoom(currentZoom);
     console.log(currentZoom);
 })
