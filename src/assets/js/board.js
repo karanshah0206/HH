@@ -53,9 +53,11 @@ document.getElementById('zoom-out-board-btn').addEventListener('click', () => {
 })
 
 // Color Picker
+var activeColor = 'rgb(0, 0, 0)';
 function colorChange (data) {
-    document.getElementById('color-picker').style.backgroundColor = data;
-    canvas.freeDrawingBrush.color = data;
+    activeColor = data;
+    document.getElementById('color-picker').style.backgroundColor = activeColor;
+    canvas.freeDrawingBrush.color = activeColor;
 }
 
 // Adding Square
@@ -89,4 +91,13 @@ function enablePointer () {
     document.getElementById('tool-picker').classList.remove('fa-eraser');
     document.getElementById('tool-picker').classList.add('fa-mouse-pointer');
     canvas.isDrawingMode = false;
+}
+
+// Pen
+function enableDrawing () {
+    document.getElementById('tool-picker').classList.remove('fa-mouse-pointer');
+    document.getElementById('tool-picker').classList.remove('fa-eraser');
+    document.getElementById('tool-picker').classList.add('fa-pen');
+    canvas.isDrawingMode = true;
+    canvas.freeDrawingBrush.color = activeColor;
 }
