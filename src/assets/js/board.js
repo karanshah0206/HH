@@ -63,8 +63,19 @@ document.getElementById('square-board-btn').addEventListener('click', () => {
         width:50,
         height:50,
         fill:document.getElementById('color-picker').style.backgroundColor,
-        top:100,
-        left:100
+        top:50,
+        left:50
     })
     canvas.add(square);
+})
+
+// Adding Circle
+document.getElementById('circle-board-btn').addEventListener('click', () => {
+    var circle = new fabric.Circle({
+        radius:25,
+        fill:document.getElementById('color-picker').style.backgroundColor,
+        top:50,
+        left:50
+    })
+    canvas.add(circle);
 })
