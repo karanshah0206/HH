@@ -92,6 +92,7 @@ function enablePointer () {
     document.getElementById('tool-picker').classList.remove('fa-eraser');
     document.getElementById('tool-picker').classList.add('fa-mouse-pointer');
     canvas.isDrawingMode = false;
+    document.getElementById('trash-erase-btn').classList.remove('hidden');
 }
 
 // Pen
@@ -101,13 +102,10 @@ function enableDrawing () {
     document.getElementById('tool-picker').classList.add('fa-pen');
     canvas.isDrawingMode = true;
     canvas.freeDrawingBrush.color = activeColor;
+    document.getElementById('trash-erase-btn').classList.add('hidden');
 }
 
 // Eraser
 function enableEraser () {
-    document.getElementById('tool-picker').classList.remove('fa-mouse-pointer');
-    document.getElementById('tool-picker').classList.remove('fa-pen');
-    document.getElementById('tool-picker').classList.add('fa-eraser');
-    canvas.isDrawingMode = true;
-    canvas.freeDrawingBrush.color = 'rgb(245, 245, 220)';
+    canvas.remove(canvas.getActiveObject());
 }
