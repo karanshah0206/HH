@@ -347,3 +347,31 @@ html {
         width: 70vw;
     }
 }
+
+.dropup {
+    position: relative;
+    display: inline-block;
+}
+
+.dropup-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 42px;
+    bottom: 38px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+.dropup-content button {
+    width: 42px !important;
+    margin-bottom: 5px;
+}
+
+.dropup-content button {
+    display: block;
+}
+
+.dropup:hover .dropup-content {
+    display: block;
+}
