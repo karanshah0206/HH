@@ -138,23 +138,19 @@ export default {
 
     toggleChatNotificationBadge(){
         if(document.querySelector('#chat-pane').classList.contains('chat-opened')){
-            document.querySelector('#new-chat-notification').setAttribute('hidden', true);
+            document.getElementById('chat-manager').classList.remove('new-msg');
         }
 
         else{
-            document.querySelector('#new-chat-notification').removeAttribute('hidden');
+            document.getElementById('chat-manager').classList.add('new-msg');
         }
     },
-
-
 
     replaceTrack(stream, recipientPeer){
         let sender = recipientPeer.getSenders ? recipientPeer.getSenders().find(s => s.track && s.track.kind === stream.kind) : false;
         
         sender ? sender.replaceTrack(stream) : '';
     },
-
-
 
     toggleShareIcons(share){
         // let shareIconElem = document.querySelector('#share-screen');

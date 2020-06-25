@@ -392,3 +392,13 @@ html {
 #zoom-info:hover {
     background-color: rgb(0,0,0);
 }
+
+.new-msg {
+    color: red !important;
+    border-color: red !important;
+}
+
+.new-msg i {
+    color: red !important;
+    border-color: red !important;
+}
