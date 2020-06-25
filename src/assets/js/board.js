@@ -84,6 +84,7 @@ document.getElementById('square-board-btn').addEventListener('click', () => {
     })
     canvas.add(square);
     enablePointer();
+    canvas.setActiveObject(square);
 })
 
 // Adding Circle
@@ -97,6 +98,7 @@ document.getElementById('circle-board-btn').addEventListener('click', () => {
     })
     canvas.add(circle);
     enablePointer();
+    canvas.setActiveObject(circle);
 })
 
 // Mouse Pointer
