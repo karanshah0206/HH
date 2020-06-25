@@ -11,7 +11,7 @@ const stream = (socket) => {
             socket.to(data.room).emit('new user', {socketId:data.socketId, username:data.uName});
         }
 
-        console.log("User Named (" + data.uName + ") Joined Room (" + data.room + ") With Socket ID (" + data.socketId + ") At (" + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds() +") On (" + today.getFullYear() + "/" + (today.getMonth()+1) + "/" + today.getDate() + ") India Standard Time.");
+        console.log('\x1b[32m', 'User Named (' + data.uName + ') Joined Room (' + data.room + ') With Socket ID (' + data.socketId + ') At (' + today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds() +') On (' + today.getFullYear() + '/' + (today.getMonth()+1) + '/' + today.getDate() + ') India Standard Time.', '\x1b[0m');
     });
 
     // New User
@@ -35,6 +35,10 @@ const stream = (socket) => {
     // Board
     socket.on('boardControls', (data) => {
         socket.to(data.room).emit('boardControls', (data.option));
+    });
+
+    socket.on('disconnect', () => {
+        console.log('\x1b[35m', 'User With Socket ID (' + socket.id + ') Disconnected At (' + today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds() +') On (' + today.getFullYear() + '/' + (today.getMonth()+1) + '/' + today.getDate() + ') India Standard Time.', '\x1b[0m');
     });
 }
 

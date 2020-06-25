@@ -17,10 +17,11 @@ app.use('/.well-known/pki-validation/BEDCF239D9946A175A3E89A67CE52CDA.txt', expr
 app.get('/.well-known/pki-validation', (req, res)=>{res.sendFile(__dirname+'/.well-known/pki-validation/BEDCF239D9946A175A3E89A67CE52CDA.txt');});
 
 // Establish Connection
+var today = new Date();
 try {
     io.of('/stream').on('connection', stream);
     server.listen(port);
-    console.log('Listening On Port ' + port);
+    console.log('\x1b[32m', '####################\n Server Started On Port ' + port + ' At (' + today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds() +') On (' + today.getFullYear() + '/' + (today.getMonth()+1) + '/' + today.getDate() + ') India Standard Time.\n ####################\n', '\x1b[0m');
 } catch (err) {
-    console.log('Unable To Established Connection On Port ' + port + '. Error Code: ' + err);
+    console.error('Failed To Start Server. At (' + today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds() +') On (' + today.getFullYear() + '/' + (today.getMonth()+1) + '/' + today.getDate() + ') India Standard Time. Error Code: ' + err);
 }
