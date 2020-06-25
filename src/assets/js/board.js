@@ -108,5 +108,8 @@ function enableDrawing () {
 
 // Eraser
 function enableEraser () {
-    canvas.remove(canvas.getActiveObject());
+    canvas.getActiveObjects().forEach((obj) => {
+        canvas.remove(obj)
+    });
+    canvas.discardActiveObject().renderAll()
 }
