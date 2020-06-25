@@ -45,6 +45,15 @@ document.getElementById('zoom-out-board-btn').addEventListener('click', () => {
     canvas.setHeight(3000 * canvas.getZoom());
 })
 
+// Zoom Info Click
+document.getElementById('zoom-info').addEventListener('click', () => {
+    currentZoom = 1;
+    canvas.setZoom(currentZoom);
+    document.getElementById('zoom-info').innerText = + currentZoom + 'x ';
+    canvas.setWidth(1500 * canvas.getZoom());
+    canvas.setHeight(3000 * canvas.getZoom());
+})
+
 // Color Picker
 var activeColor = 'rgb(0, 0, 0)';
 function colorChange (data) {
