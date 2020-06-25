@@ -60,6 +60,16 @@ function colorChange (data) {
     activeColor = data;
     document.getElementById('color-picker').style.backgroundColor = activeColor;
     canvas.freeDrawingBrush.color = activeColor;
+    canvas.getActiveObjects().forEach((obj) => {
+        var objType = canvas.getActiveObject().get('type');
+        if (objType != 'path') {
+            canvas.getActiveObject().set({fill: activeColor, stroke: activeColor});
+            canvas.discardActiveObject().renderAll();
+        } else {
+            canvas.getActiveObject().set({stroke: activeColor});
+            canvas.discardActiveObject().renderAll();
+        }
+    });
 }
 
 // Adding Square
@@ -67,7 +77,8 @@ document.getElementById('square-board-btn').addEventListener('click', () => {
     var square = new fabric.Rect({
         width:50,
         height:50,
-        fill:document.getElementById('color-picker').style.backgroundColor,
+        fill:activeColor,
+        stroke: activeColor,
         top:50,
         left:50
     })
@@ -79,7 +90,8 @@ document.getElementById('square-board-btn').addEventListener('click', () => {
 document.getElementById('circle-board-btn').addEventListener('click', () => {
     var circle = new fabric.Circle({
         radius:25,
-        fill:document.getElementById('color-picker').style.backgroundColor,
+        fill:activeColor,
+        stroke: activeColor,
         top:50,
         left:50
     })
@@ -111,5 +123,5 @@ function enableEraser () {
     canvas.getActiveObjects().forEach((obj) => {
         canvas.remove(obj)
     });
-    canvas.discardActiveObject().renderAll()
+    canvas.discardActiveObject().renderAll();
 }
