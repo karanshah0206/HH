@@ -61,6 +61,8 @@ function colorChange (data) {
     activeColor = data;
     document.getElementById('color-picker').style.backgroundColor = activeColor;
     canvas.freeDrawingBrush.color = activeColor;
+    canvas.getActiveObject().setFill(activeColor);
+    canvas.renderAll();
     canvas.getActiveObjects().forEach((obj) => {
         var objType = canvas.getActiveObject().get('type');
         if (objType != 'path') {
@@ -140,3 +142,18 @@ function setStroke (data) {
         canvas.discardActiveObject().renderAll();
     });
 }
+
+// Adding Text
+document.getElementById('text-board-btn').addEventListener('click', () => {
+    var text = new fabric.IText('Text', {
+        fontFamily:'Comic Sans',
+        stroke:activeColor,
+        fill:activeColor,
+        strokeWidth:1,
+        top:50,
+        left:50
+    });
+    canvas.add(text);
+    enablePointer();
+    canvas.setActiveObject(text);
+})
