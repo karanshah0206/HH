@@ -1,3 +1,7 @@
+var activeStroke = 1;
+var activeColor = 'rgb(0, 0, 0)';
+var activeZoom = 1;
+
 // Fabric
 var canvas = new fabric.Canvas('board-child', {isDrawingMode: true});
 canvas.backgroundColor = 'rgb(245, 245, 220)';
@@ -17,45 +21,42 @@ document.getElementById('download-board-btn').addEventListener('click', () => {
     $('#downloadTemp').remove();
 })
 
-var currentZoom = 1;
-
 // Zoom In
 document.getElementById('zoom-in-board-btn').addEventListener('click', () => {
-    if (currentZoom >= 0.5) {
-        currentZoom += 0.5;
+    if (activeZoom >= 0.5) {
+        activeZoom += 0.5;
     } else {
-        currentZoom *= 2;
+        activeZoom *= 2;
     }
-    canvas.setZoom(currentZoom);
-    document.getElementById('zoom-info').innerText = + currentZoom + 'x ';
+    canvas.setZoom(activeZoom);
+    document.getElementById('zoom-info').innerText = + activeZoom + 'x ';
     canvas.setWidth(1500 * canvas.getZoom());
     canvas.setHeight(3000 * canvas.getZoom());
 })
 
 // Zoom Out
 document.getElementById('zoom-out-board-btn').addEventListener('click', () => {
-    if (currentZoom > 0.5) {
-        currentZoom -= 0.5;
+    if (activeZoom > 0.5) {
+        activeZoom -= 0.5;
     } else {
-        currentZoom /= 2;
+        activeZoom /= 2;
     }
-    canvas.setZoom(currentZoom);
-    document.getElementById('zoom-info').innerText = + currentZoom + 'x ';
+    canvas.setZoom(activeZoom);
+    document.getElementById('zoom-info').innerText = + activeZoom + 'x ';
     canvas.setWidth(1500 * canvas.getZoom());
     canvas.setHeight(3000 * canvas.getZoom());
 })
 
 // Zoom Info Click
 document.getElementById('zoom-info').addEventListener('click', () => {
-    currentZoom = 1;
-    canvas.setZoom(currentZoom);
-    document.getElementById('zoom-info').innerText = + currentZoom + 'x ';
+    activeZoom = 1;
+    canvas.setZoom(activeZoom);
+    document.getElementById('zoom-info').innerText = + activeZoom + 'x ';
     canvas.setWidth(1500 * canvas.getZoom());
     canvas.setHeight(3000 * canvas.getZoom());
 })
 
 // Color Picker
-var activeColor = 'rgb(0, 0, 0)';
 function colorChange (data) {
     activeColor = data;
     document.getElementById('color-picker').style.backgroundColor = activeColor;
@@ -78,7 +79,8 @@ document.getElementById('square-board-btn').addEventListener('click', () => {
         width:50,
         height:50,
         fill:activeColor,
-        stroke: activeColor,
+        stroke:activeColor,
+        strokeWidth:activeStroke,
         top:50,
         left:50
     })
@@ -93,6 +95,7 @@ document.getElementById('circle-board-btn').addEventListener('click', () => {
         radius:25,
         fill:activeColor,
         stroke: activeColor,
+        strokeWidth:activeStroke,
         top:50,
         left:50
     })
@@ -130,5 +133,10 @@ function enableEraser () {
 
 // Stroke
 function setStroke (data) {
-    canvas.freeDrawingBrush.width = parseInt(data, 10) || 1;;
+    activeStroke = data;
+    canvas.freeDrawingBrush.width = parseInt(activeStroke, 10) || 1;
+    canvas.getActiveObjects().forEach((obj) => {
+        canvas.getActiveObject().set({strokeWidth:activeStroke});
+        canvas.discardActiveObject().renderAll();
+    });
 }
