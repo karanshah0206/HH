@@ -21,6 +21,40 @@ document.getElementById('download-board-btn').addEventListener('click', () => {
     $('#downloadTemp').remove();
 })
 
+// Upload Image
+window.addEventListener('load', () => {
+    document.getElementById('upload-form').classList.add('hidden');
+})
+
+document.getElementById('upload-board-btn').addEventListener ('click', () => {
+    if (document.getElementById('upload-form').classList.contains('hidden')) {
+        document.getElementById('upload-form').classList.remove('hidden');
+    } else {
+        document.getElementById('upload-form').classList.add('hidden');
+    }
+})
+
+document.getElementById('upload-form-close').addEventListener('click', () => {
+    document.getElementById('upload-form').classList.add('hidden');
+});
+
+document.getElementById('upload-btn').onchange = function handleImage(e) {
+    var reader = new FileReader();
+      reader.onload = function (event){
+        var imgObj = new Image();
+        imgObj.src = event.target.result;
+        imgObj.onload = function () {
+          var image = new fabric.Image(imgObj);
+          canvas.add(image);
+          canvas.renderAll();
+          enablePointer();
+          canvas.setActiveObject(image);
+          document.getElementById('upload-form').classList.add('hidden');
+        }
+      }
+      reader.readAsDataURL(e.target.files[0]);
+    }
+
 // Zoom In
 document.getElementById('zoom-in-board-btn').addEventListener('click', () => {
     if (activeZoom >= 0.5) {

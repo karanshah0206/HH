@@ -153,6 +153,10 @@
 
         <!-- Board -->
         <div id="board" class="resp">
+            <div id="upload-form" class="bg-info">
+                <button class="btn btn-danger" style="margin-left: 5px;"><i class="fa fa-times" id="upload-form-close"></i></button>
+                <input type="file" id="upload-btn" class="btn btn-info" style="max-width: 300px;">
+            </div>
             <canvas id="board-child" height="3000px" width="1500px"></canvas>
             <div id="board-controls">
                 <button class="btn btn-warning" title="Zoom In" id="zoom-in-board-btn"><i class="fa fa-search-plus"></i></button>
@@ -189,6 +193,7 @@
                         <button class="btn btn-success rounded-0" onclick="enableDrawing();"><i class="fa fa-pen"></i></button>
                     </div>
                 </div>
+                <button class="btn btn-info" title="Upload Image" id="upload-board-btn"><i class="fa fa-upload"></i></button>
                 <button class="btn btn-info" title="Download Board" id="download-board-btn"><i class="fa fa-download"></i></button>
                 <button class="btn btn-danger" title="Clear Board" id="clear-board-btn"><i class="fa fa-trash"></i></button>
             </div>

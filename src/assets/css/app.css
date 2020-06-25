@@ -346,6 +346,10 @@ html {
         height: 80vh;
         width: 70vw;
     }
+
+    #upload-form {
+        margin-left: 0 !important;
+    }
 }
 
 .dropup {
@@ -431,4 +435,10 @@ html {
 }
 .font-5 {
     font-size: 40px !important;
+}
+
+#upload-form {
+    position: absolute;
+    margin-left: 10%;
+    z-index: 1;
 }
