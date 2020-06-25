@@ -127,3 +127,8 @@ function enableEraser () {
     });
     canvas.discardActiveObject().renderAll();
 }
+
+// Stroke
+function setStroke (data) {
+    canvas.freeDrawingBrush.width = parseInt(data, 10) || 1;;
+}

@@ -159,12 +159,14 @@
                 <p id="zoom-info">1x </p>
                 <button class="btn btn-warning" title="Zoom Out" id="zoom-out-board-btn"><i class="fa fa-search-minus"></i></button>
                 <div class="dropup">
-                    <button id="stroke-picker" class="btn btn-default dropbtn fs font-1" title="Stroke Size"><i class="fa fa-circle"></i></button>
+                    <button id="stroke-picker" class="btn btn-default dropbtn fs font-0" title="Stroke Size"><i class="fa fa-circle"></i></button>
                     <div class="dropup-content" id="color-picker-options">
-                        <button class="btn btn-default dropbtn fs-l font-4"><i class="fa fa-circle"></i></button>
-                        <button class="btn btn-default dropbtn fs-l font-3"><i class="fa fa-circle"></i></button>
-                        <button class="btn btn-default dropbtn fs-m font-2"><i class="fa fa-circle"></i></button>
-                        <button class="btn btn-default dropbtn fs-m font-1"><i class="fa fa-circle"></i></button>
+                        <button class="btn btn-default dropbtn fs-l font-5" onclick="setStroke(60);"><i class="fa fa-circle"></i></button>
+                        <button class="btn btn-default dropbtn fs-l font-4" onclick="setStroke(40);"><i class="fa fa-circle"></i></button>
+                        <button class="btn btn-default dropbtn fs-m font-3" onclick="setStroke(30);"><i class="fa fa-circle"></i></button>
+                        <button class="btn btn-default dropbtn fs-m font-2" onclick="setStroke(20);"><i class="fa fa-circle"></i></button>
+                        <button class="btn btn-default dropbtn fs-m font-1" onclick="setStroke(10);"><i class="fa fa-circle"></i></button>
+                        <button class="btn btn-default dropbtn fs-m font-0" onclick="setStroke(1);"><i class="fa fa-circle"></i></button>
                     </div>
                 </div>
                 <button class="btn btn-danger hidden" title="Trash/Erase" id="trash-erase-btn" onclick="enableEraser();"><i class="fa fa-times"></i></button>
