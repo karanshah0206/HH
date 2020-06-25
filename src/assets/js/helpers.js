@@ -106,14 +106,10 @@ export default {
     addChat(data, senderType){
         let chatMsgDiv = document.querySelector('#chat-messages');
         let contentAlign = 'justify-content-end';
-        let senderName = 'You';
+        let senderName = data.sender;
         let msgBg = 'bg-white';
 
         if(senderType === 'remote'){
-            contentAlign = 'justify-content-start';
-            senderName = data.sender;
-            msgBg = '';
-
             this.toggleChatNotificationBadge();
         }
 
