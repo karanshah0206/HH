@@ -14,7 +14,6 @@ app.use('/index.html', express.static(path.join(__dirname + '/index.html')));
 app.get('/', (req, res)=>{res.sendFile(__dirname+'/index.html');});
 
 app.use('/.well-known/pki-validation/BEDCF239D9946A175A3E89A67CE52CDA.txt', express.static(path.join(__dirname + '/.well-known/pki-validation/BEDCF239D9946A175A3E89A67CE52CDA.txt')));
-app.get('/.well-known/pki-validation', (req, res)=>{res.sendFile(__dirname+'/.well-known/pki-validation/BEDCF239D9946A175A3E89A67CE52CDA.txt');});
 
 // Establish Connection
 var today = new Date();
