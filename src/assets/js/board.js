@@ -61,15 +61,20 @@ function colorChange (data) {
     activeColor = data;
     document.getElementById('color-picker').style.backgroundColor = activeColor;
     canvas.freeDrawingBrush.color = activeColor;
-    canvas.getActiveObject().setFill(activeColor);
-    canvas.renderAll();
     canvas.getActiveObjects().forEach((obj) => {
-        var objType = canvas.getActiveObject().get('type');
-        if (objType != 'path') {
-            canvas.getActiveObject().set({fill: activeColor, stroke: activeColor});
+        var objType = obj.get('type');
+        console.log(objType);
+        if (objType == 'path') {
+            obj.set({stroke: activeColor});
             canvas.discardActiveObject().renderAll();
-        } else {
-            canvas.getActiveObject().set({stroke: activeColor});
+        }
+        else if (objType == 'i-text') {
+            obj.setFill(activeColor);
+            obj.set({fill: activeColor, stroke: activeColor});
+            canvas.renderAll();
+        }
+        else {
+            obj.set({fill: activeColor, stroke: activeColor});
             canvas.discardActiveObject().renderAll();
         }
     });
