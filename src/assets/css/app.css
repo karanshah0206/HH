@@ -360,7 +360,6 @@ html {
 }
 
 .dropup-content {
-    display: block;
     position: absolute;
     background-color: #f1f1f1;
     width: 42px;
