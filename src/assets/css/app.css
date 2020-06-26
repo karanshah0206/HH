@@ -360,7 +360,7 @@ html {
 }
 
 .dropup-content {
-    display: none;
+    display: block;
     position: absolute;
     background-color: #f1f1f1;
     width: 42px;
@@ -375,10 +375,6 @@ html {
 }
 
 .dropup-content button {
-    display: block;
-}
-
-.dropup:hover .dropup-content {
     display: block;
 }
 
