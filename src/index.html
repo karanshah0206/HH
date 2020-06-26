@@ -154,7 +154,7 @@
         <!-- Board -->
         <div id="board" class="resp">
             <div id="upload-form" class="bg-info">
-                <button class="btn btn-danger" style="margin-left: 5px;"><i class="fa fa-times" id="upload-form-close"></i></button>
+                <button id="upload-form-close" class="btn btn-danger" style="margin-left: 5px;"><i class="fa fa-times"></i></button>
                 <input type="file" id="upload-btn" class="btn btn-info" style="max-width: 300px;">
             </div>
             <canvas id="board-child" height="3000px" width="1500px"></canvas>
@@ -184,11 +184,11 @@
                     </div>
                 </div>
                 <div class="dropup">
-                    <button class="btn btn-success dropbtn" title="Tool Picker"><i id="tool-picker" class="fa fa-pen"></i></button>
+                    <button class="btn btn-success dropbtn" title="Tool Picker" id="tool-picker"><i class="fa fa-pen"></i></button>
                     <div class="dropup-content">
                         <button class="btn btn-success rounded-0" style="margin-top: 5px;" id="square-board-btn"><i class="fa fa-square"></i></button>
-                        <button class="btn btn-success rounded-0"><i class="fa fa-circle" id="circle-board-btn"></i></button>
-                        <button class="btn btn-success rounded-0"><i class="fa fa-font" id="text-board-btn"></i></button>
+                        <button class="btn btn-success rounded-0" id="circle-board-btn"><i class="fa fa-circle"></i></button>
+                        <button class="btn btn-success rounded-0" id="text-board-btn"><i class="fa fa-font"></i></button>
                         <button class="btn btn-success rounded-0"  onclick="enablePointer();"><i class="fa fa-mouse-pointer"></i></button>
                         <button class="btn btn-success rounded-0" onclick="enableDrawing();"><i class="fa fa-pen"></i></button>
                     </div>
