@@ -148,18 +148,18 @@ document.getElementById('circle-board-btn').addEventListener('click', () => {
 
 // Mouse Pointer
 function enablePointer () {
-    document.getElementById('tool-picker').classList.remove('fa-pen');
-    document.getElementById('tool-picker').classList.remove('fa-eraser');
-    document.getElementById('tool-picker').classList.add('fa-mouse-pointer');
+    document.getElementById('tool-picker-logo').classList.remove('fa-pen');
+    document.getElementById('tool-picker-logo').classList.remove('fa-eraser');
+    document.getElementById('tool-picker-logo').classList.add('fa-mouse-pointer');
     canvas.isDrawingMode = false;
     document.getElementById('trash-erase-btn').classList.remove('hidden');
 }
 
 // Pen
 function enableDrawing () {
-    document.getElementById('tool-picker').classList.remove('fa-mouse-pointer');
-    document.getElementById('tool-picker').classList.remove('fa-eraser');
-    document.getElementById('tool-picker').classList.add('fa-pen');
+    document.getElementById('tool-picker-logo').classList.remove('fa-mouse-pointer');
+    document.getElementById('tool-picker-logo').classList.remove('fa-eraser');
+    document.getElementById('tool-picker-logo').classList.add('fa-pen');
     canvas.isDrawingMode = true;
     canvas.freeDrawingBrush.color = activeColor;
     document.getElementById('trash-erase-btn').classList.add('hidden');
