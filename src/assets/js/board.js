@@ -197,34 +197,3 @@ document.getElementById('text-board-btn').addEventListener('click', () => {
     enablePointer();
     canvas.setActiveObject(text);
 })
-
-// Managing Dropups
-document.getElementById('stroke-picker-drop').addEventListener('mouseover', () => {
-    document.getElementById('stroke-picker-options').classList.remove('hidden');
-})
-document.getElementById('stroke-picker-drop').addEventListener('click', () => {
-    document.getElementById('stroke-picker-options').classList.add('hidden');
-})
-document.getElementById('stroke-picker-drop').addEventListener('mouseout', () => {
-    document.getElementById('stroke-picker-options').classList.add('hidden');
-})
-
-document.getElementById('tool-picker-drop').addEventListener('mouseover', () => {
-    document.getElementById('tool-picker-options').classList.remove('hidden');
-})
-document.getElementById('tool-picker-drop').addEventListener('click', () => {
-    document.getElementById('tool-picker-options').classList.add('hidden');
-})
-document.getElementById('tool-picker-drop').addEventListener('mouseout', () => {
-    document.getElementById('tool-picker-options').classList.add('hidden');
-})
-
-document.getElementById('color-picker-drop').addEventListener('mouseover', () => {
-    document.getElementById('color-picker-options').classList.remove('hidden');
-})
-document.getElementById('color-picker-drop').addEventListener('click', () => {
-    document.getElementById('color-picker-options').classList.add('hidden');
-})
-document.getElementById('color-picker-drop').addEventListener('mouseout', () => {
-    document.getElementById('color-picker-options').classList.add('hidden');
-})
