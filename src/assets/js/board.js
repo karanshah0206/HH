@@ -49,6 +49,7 @@ document.getElementById('upload-btn').onchange = function handleImage(e) {
           canvas.renderAll();
           enablePointer();
           canvas.setActiveObject(image);
+          document.getElementById('upload-btn').value = '';
           document.getElementById('upload-form').classList.add('hidden');
         }
       }
