@@ -287,6 +287,7 @@ html {
     top: 55px;
     margin: 0;
     padding: 0;
+    background-color: rgb(245, 245, 220);
     overflow: auto;
 }
 
@@ -294,6 +295,7 @@ html {
     background-color: rgb(245, 245, 220);
     margin: 0;
     padding: 0;
+    border: 1px solid black;
 }
 
 #board-controls {
