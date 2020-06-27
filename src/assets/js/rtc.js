@@ -6,11 +6,13 @@ window.addEventListener('load', () => {
 
     if (!room) {
         document.querySelector('#room-create').attributes.removeNamedItem('hidden');
+        document.getElementById("room-name").focus();
         document.getElementById('globalFooter').classList.remove('hidden');
     }
 
     else if (!username) {
         document.querySelector('#username-set').attributes.removeNamedItem('hidden');
+        document.getElementById("username").focus();
         document.getElementById('globalFooter').classList.remove('hidden');
     }
 
@@ -608,7 +610,9 @@ window.addEventListener('load', () => {
         });
 
         document.getElementById('chat-sender').addEventListener('click', () => {
-            sendMsg(document.getElementById('chat-input').value);
+            if (document.getElementById('chat-input').value != '') {
+                sendMsg(document.getElementById('chat-input').value);
+            }
 
             setTimeout(() => {
                 document.getElementById('chat-input').value = '';

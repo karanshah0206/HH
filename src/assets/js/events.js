@@ -22,9 +22,9 @@ window.addEventListener('load', ()=>{
             chatElem.classList.add('chat-opened');
             document.getElementById('toggle-chat-pane').classList.remove('fa-comment');
             document.getElementById('toggle-chat-pane').classList.add('fa-comment-slash');
+            document.getElementById('chat-input').focus();
         }
 
-        //remove the 'New' badge on chat icon (if any) once chat is opened.
         setTimeout(()=>{
             if(document.querySelector('#chat-pane').classList.contains('chat-opened')){
                 helpers.toggleChatNotificationBadge();
