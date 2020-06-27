@@ -111,6 +111,7 @@ window.addEventListener('load', () => {
             // Drawing Recieved
             socket.on('boardDrawn', (data) => {
                 console.log(data);
+                canvas.loadFromJSON(data, canvas.renderAll.bind(canvas));
             })
 
             // Board
@@ -229,6 +230,22 @@ window.addEventListener('load', () => {
                         }
                     });
                 }
+                
+                document.getElementById('colorpick-btn-board-black').addEventListener('click', () => {
+                    colorChange('rgb(0, 0, 0)');
+                })
+                document.getElementById('colorpick-btn-board-red').addEventListener('click', () => {
+                    colorChange('rgb(255, 0, 0)');
+                })
+                document.getElementById('colorpick-btn-board-blue').addEventListener('click', () => {
+                    colorChange('rgb(102, 197, 235)');
+                })
+                document.getElementById('colorpick-btn-board-green').addEventListener('click', () => {
+                    colorChange('rgb(97, 212, 97)');
+                })
+                document.getElementById('colorpick-btn-board-yellow').addEventListener('click', () => {
+                    colorChange('rgb(231, 231, 87)');
+                })
 
                 // Adding Square
                 document.getElementById('square-board-btn').addEventListener('click', () => {
@@ -270,6 +287,10 @@ window.addEventListener('load', () => {
                     document.getElementById('trash-erase-btn').classList.remove('hidden');
                 }
 
+                document.getElementById('pointer-board-btn').addEventListener('click', () => {
+                    enablePointer();
+                })
+
                 // Pen
                 function enableDrawing () {
                     document.getElementById('tool-picker-logo').classList.remove('fa-mouse-pointer');
@@ -279,6 +300,10 @@ window.addEventListener('load', () => {
                     canvas.freeDrawingBrush.color = activeColor;
                     document.getElementById('trash-erase-btn').classList.add('hidden');
                 }
+                
+                document.getElementById('brush-board-btn').addEventListener('click', () => {
+                    enableDrawing();
+                })
 
                 // Eraser
                 function enableEraser () {
@@ -287,6 +312,9 @@ window.addEventListener('load', () => {
                     });
                     canvas.discardActiveObject().renderAll();
                 }
+                document.getElementById('trash-erase-btn').addEventListener('click', () => {
+                    enableEraser();
+                })
 
                 // Stroke
                 function setStroke (data) {
@@ -297,6 +325,21 @@ window.addEventListener('load', () => {
                         canvas.discardActiveObject().renderAll();
                     });
                 }
+                document.getElementById('stroke-setter-40').addEventListener('click', () => {
+                    setStroke(40);
+                })
+                document.getElementById('stroke-setter-30').addEventListener('click', () => {
+                    setStroke(30);
+                })
+                document.getElementById('stroke-setter-20').addEventListener('click', () => {
+                    setStroke(20);
+                })
+                document.getElementById('stroke-setter-10').addEventListener('click', () => {
+                    setStroke(10);
+                })
+                document.getElementById('stroke-setter-1').addEventListener('click', () => {
+                    setStroke(1);
+                })
 
                 // Adding Text
                 document.getElementById('text-board-btn').addEventListener('click', () => {

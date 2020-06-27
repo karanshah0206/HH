@@ -165,22 +165,22 @@
                 <div class="dropup" id="stroke-picker-drop">
                     <button id="stroke-picker" class="btn btn-default dropbtn fs font-0" title="Stroke Size"><i class="fa fa-circle"></i></button>
                     <div class="dropup-content" id="stroke-picker-options">
-                        <button class="btn btn-default dropbtn fs-l font-4" onclick="setStroke(40);"><i class="fa fa-circle"></i></button>
-                        <button class="btn btn-default dropbtn fs-m font-3" onclick="setStroke(30);"><i class="fa fa-circle"></i></button>
-                        <button class="btn btn-default dropbtn fs-m font-2" onclick="setStroke(20);"><i class="fa fa-circle"></i></button>
-                        <button class="btn btn-default dropbtn fs-m font-1" onclick="setStroke(10);"><i class="fa fa-circle"></i></button>
-                        <button class="btn btn-default dropbtn fs-m font-0" onclick="setStroke(1);"><i class="fa fa-circle"></i></button>
+                        <button class="btn btn-default dropbtn fs-l font-4" id="stroke-setter-40"><i class="fa fa-circle"></i></button>
+                        <button class="btn btn-default dropbtn fs-m font-3" id="stroke-setter-30"><i class="fa fa-circle"></i></button>
+                        <button class="btn btn-default dropbtn fs-m font-2" id="stroke-setter-20"><i class="fa fa-circle"></i></button>
+                        <button class="btn btn-default dropbtn fs-m font-1" id="stroke-setter-10"><i class="fa fa-circle"></i></button>
+                        <button class="btn btn-default dropbtn fs-m font-0" id="stroke-setter-1"><i class="fa fa-circle"></i></button>
                     </div>
                 </div>
-                <button class="btn btn-danger hidden" title="Trash/Erase" id="trash-erase-btn" onclick="enableEraser();"><i class="fa fa-times"></i></button>
+                <button class="btn btn-danger hidden" title="Trash/Erase" id="trash-erase-btn"><i class="fa fa-times"></i></button>
                 <div class="dropup" id="color-picker-drop">
                     <button id="color-picker" class="btn btn-default dropbtn" title="Color Picker" style="background-color: rgb(0, 0, 0); color: white;"><i class="fa fa-tint"></i></button>
                     <div class="dropup-content" id="color-picker-options">
-                        <button class="btn btn-default rounded-0" style="margin-top: 5px; background-color: rgb(231, 231, 87); color: white;" onclick="colorChange('rgb(231, 231, 87)');"><i class="fa fa-tint"></i></button>
-                        <button class="btn btn-default rounded-0" style="background-color: rgb(97, 212, 97); color: white;" onclick="colorChange('rgb(97, 212, 97)');"><i class="fa fa-tint"></i></button>
-                        <button class="btn btn-default rounded-0" style="background-color: rgb(102, 197, 235); color: white;" onclick="colorChange('rgb(102, 197, 235)');"><i class="fa fa-tint"></i></button>
-                        <button class="btn btn-default rounded-0" style="background-color: rgb(255, 0, 0); color: white;" onclick="colorChange('rgb(255, 0, 0)');"><i class="fa fa-tint"></i></button>
-                        <button class="btn btn-default rounded-0" style="background-color: rgb(0, 0, 0); color: white;" onclick="colorChange('rgb(0, 0, 0)');"><i class="fa fa-tint"></i></button>
+                        <button class="btn btn-default rounded-0" style="margin-top: 5px; background-color: rgb(231, 231, 87); color: white;" id="colorpick-btn-board-yellow"><i class="fa fa-tint"></i></button>
+                        <button class="btn btn-default rounded-0" style="background-color: rgb(97, 212, 97); color: white;" id="colorpick-btn-board-green"><i class="fa fa-tint"></i></button>
+                        <button class="btn btn-default rounded-0" style="background-color: rgb(102, 197, 235); color: white;" id="colorpick-btn-board-blue"><i class="fa fa-tint"></i></button>
+                        <button class="btn btn-default rounded-0" style="background-color: rgb(255, 0, 0); color: white;" id="colorpick-btn-board-red"><i class="fa fa-tint"></i></button>
+                        <button class="btn btn-default rounded-0" style="background-color: rgb(0, 0, 0); color: white;" id="colorpick-btn-board-black"><i class="fa fa-tint"></i></button>
                     </div>
                 </div>
                 <div class="dropup" id="tool-picker-drop">
@@ -189,8 +189,8 @@
                         <button class="btn btn-success rounded-0" style="margin-top: 5px;" id="square-board-btn"><i class="fa fa-square"></i></button>
                         <button class="btn btn-success rounded-0" id="circle-board-btn"><i class="fa fa-circle"></i></button>
                         <button class="btn btn-success rounded-0" id="text-board-btn"><i class="fa fa-font"></i></button>
-                        <button class="btn btn-success rounded-0"  onclick="enablePointer();"><i class="fa fa-mouse-pointer"></i></button>
-                        <button class="btn btn-success rounded-0" onclick="enableDrawing();"><i class="fa fa-pen"></i></button>
+                        <button class="btn btn-success rounded-0" id="pointer-board-btn"><i class="fa fa-mouse-pointer"></i></button>
+                        <button class="btn btn-success rounded-0" id="brush-board-btn"><i class="fa fa-pen"></i></button>
                     </div>
                 </div>
                 <button class="btn btn-info" title="Upload Image" id="upload-board-btn"><i class="fa fa-upload"></i></button>
