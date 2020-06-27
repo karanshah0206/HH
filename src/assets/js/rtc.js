@@ -110,7 +110,6 @@ window.addEventListener('load', () => {
 
             // Drawing Recieved
             socket.on('boardDrawn', (data) => {
-                console.log(data);
                 canvas.loadFromJSON(data, canvas.renderAll.bind(canvas));
             })
 
@@ -214,7 +213,6 @@ window.addEventListener('load', () => {
                     canvas.freeDrawingBrush.color = activeColor;
                     canvas.getActiveObjects().forEach((obj) => {
                         var objType = obj.get('type');
-                        console.log(objType);
                         if (objType == 'path') {
                             obj.set({stroke: activeColor});
                             canvas.discardActiveObject().renderAll();
@@ -359,14 +357,12 @@ window.addEventListener('load', () => {
                 document.getElementById('board').addEventListener('touchend', () => {
                     setTimeout(() => {
                         boardContent = JSON.stringify(canvas);
-                        console.log(boardContent);
                         socket.emit('boardDrawn', {room: room, content: boardContent});
                     }, 10);
                 })
                 document.getElementById('board').addEventListener('mouseup', () => {
                     setTimeout(() => {
                         boardContent = JSON.stringify(canvas);
-                        console.log(boardContent);
                         socket.emit('boardDrawn', {room: room, content: boardContent});
                     }, 10);
                 })
