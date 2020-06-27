@@ -610,7 +610,7 @@ window.addEventListener('load', () => {
         });
 
         document.getElementById('chat-sender').addEventListener('click', () => {
-            if (document.getElementById('chat-input').value != '') {
+            if (document.getElementById('chat-input').value != '' && /\S/.test(document.getElementById('chat-input').value)) {
                 sendMsg(document.getElementById('chat-input').value);
             }
 
