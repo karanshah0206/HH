@@ -2,7 +2,6 @@ var activeStroke = 1;
 var activeColor = 'rgb(0, 0, 0)';
 var activeZoom = 1;
 
-window.addEventListener('load', () => {
     // Fabric
     var canvas = new fabric.Canvas('board-child', {isDrawingMode: true});
     canvas.backgroundColor = 'rgb(245, 245, 220)';
@@ -66,6 +65,7 @@ window.addEventListener('load', () => {
         document.getElementById('zoom-info').innerText = + activeZoom + 'x ';
         canvas.setWidth(1500 * canvas.getZoom());
         canvas.setHeight(3000 * canvas.getZoom());
+        console.log(JSON.stringify(canvas));
     })
 
     // Zoom Out
@@ -196,4 +196,3 @@ window.addEventListener('load', () => {
         enablePointer();
         canvas.setActiveObject(text);
     })
-});
