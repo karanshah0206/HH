@@ -319,8 +319,11 @@ window.addEventListener('load', () => {
                     activeStroke = data;
                     canvas.freeDrawingBrush.width = parseInt(activeStroke, 10) || 1;
                     canvas.getActiveObjects().forEach((obj) => {
-                        canvas.getActiveObject().set({strokeWidth:activeStroke});
-                        canvas.discardActiveObject().renderAll();
+                        var objType = obj.get('type');
+                        if (objType != 'i-text') {
+                            obj.set({strokeWidth:activeStroke});
+                            canvas.discardActiveObject().renderAll();
+                        }
                     });
                 }
                 document.getElementById('stroke-setter-40').addEventListener('click', () => {
