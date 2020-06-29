@@ -11,7 +11,7 @@ const stream = (socket) => {
             socket.to(data.room).emit('new user', {socketId:data.socketId, username:data.uName});
         }
 
-        console.log('\x1b[32m', 'User Named (' + data.uName + ') Joined Room (' + data.room + ') With Socket ID (' + data.socketId + ') At (' + today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds() +') On (' + today.getFullYear() + '/' + (today.getMonth()+1) + '/' + today.getDate() + ') India Standard Time.', '\x1b[0m');
+        console.log("User Named (" + data.uName + ") Joined Room (" + data.room + ") With Socket ID (" + data.socketId + ") At (" + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds() +") On (" + today.getFullYear() + "/" + (today.getMonth()+1) + "/" + today.getDate() + ") India Standard Time.");
     });
 
     // New User
@@ -19,32 +19,23 @@ const stream = (socket) => {
         socket.to(data.to).emit('newUserStart', {sender:data.sender});
     });
 
-    socket.on('sdp', (data) => {
+    socket.on('sdp', (data)=>{
         socket.to(data.to).emit('sdp', {description: data.description, sender:data.sender});
     });
 
-    socket.on('ice candidates', (data) => {
+    socket.on('ice candidates', (data)=>{
         socket.to(data.to).emit('ice candidates', {candidate:data.candidate, sender:data.sender});
     });
 
     // Chat
-    socket.on('chat', (data) => {
+    socket.on('chat', (data)=>{
         socket.to(data.room).emit('chat', {sender: data.sender, msg: data.msg});
     });
 
-    // Board Controls
+    // Board
     socket.on('boardControls', (data) => {
         socket.to(data.room).emit('boardControls', (data.option));
-    });
-
-    // Board Drawing
-    socket.on('boardDrawn', (data) => {
-        socket.broadcast.to(data.room).emit('boardDrawn', (data.content));
-    });
-
-    socket.on('disconnect', () => {
-        console.log('\x1b[35m', 'User With Socket ID (' + socket.id + ') Disconnected At (' + today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds() +') On (' + today.getFullYear() + '/' + (today.getMonth()+1) + '/' + today.getDate() + ') India Standard Time.', '\x1b[0m');
-    });
+    })
 }
 
 module.exports = stream;
