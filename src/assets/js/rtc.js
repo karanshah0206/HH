@@ -98,6 +98,16 @@ window.addEventListener('load', () => {
                 h.addChat(data, 'remote');
             })
 
+            socket.on('muteCase', (data) => {
+                console.log('ID: ' + data.sender + ' Option: ' + data.ismute);
+                if (data.ismute == true) {
+                    document.getElementById(data.sender + '-mute').classList.remove('hidden');
+                }
+                else {
+                    document.getElementById(data.sender + '-mute').classList.add('hidden');
+                }
+            })
+
             // Board
             removeBoard();
             socket.on('boardControls', (option) => {
@@ -201,12 +211,18 @@ window.addEventListener('load', () => {
                     controlDiv.className = 'remote-video-controls';
                     controlDiv.innerHTML = `<i class="fa fa-expand text-white expand-remote-video" title="Expand"></i>`;
 
+                    let muteDiv = document.createElement('div');
+                    muteDiv.id = `${partnerName}-mute`;
+                    muteDiv.className = 'hidden remote-video-mute';
+                    muteDiv.innerHTML = `<i class="fa fa-microphone-slash" title="User Is Mute"></i>`;
+
                     // Create a new div for card
                     let cardDiv = document.createElement('div');
                     cardDiv.className = 'card';
                     cardDiv.id = partnerName;
                     cardDiv.appendChild(newVid);
                     cardDiv.appendChild(controlDiv);
+                    cardDiv.appendChild(muteDiv);
 
                     //put div in main-section elem
                     document.getElementById('videos').appendChild(cardDiv);
@@ -422,6 +438,8 @@ window.addEventListener('load', () => {
                 e.target.classList.add('fa-microphone-alt-slash');
                 e.target.classList.remove('fa-microphone-alt');
                 elem.setAttribute('title', 'Unmute');
+                socket.emit('muteCase', {room: room, sender: socketId, ismute: true});
+                console.log("Mute Working!");
 
                 myStream.getAudioTracks()[0].enabled = false;
             }
@@ -430,6 +448,8 @@ window.addEventListener('load', () => {
                 e.target.classList.add('fa-microphone-alt');
                 e.target.classList.remove('fa-microphone-alt-slash');
                 elem.setAttribute('title', 'Mute');
+                socket.emit('muteCase', {room: room, sender: socketId, ismute: false});
+                console.log("Mute Working!");
 
                 myStream.getAudioTracks()[0].enabled = true;
             }

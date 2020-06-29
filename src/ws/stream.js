@@ -35,6 +35,11 @@ const stream = (socket) => {
     // Board
     socket.on('boardControls', (data) => {
         socket.to(data.room).emit('boardControls', (data.option));
+    });
+
+    // Mute Controls
+    socket.on('muteCase', (data) => {
+        socket.broadcast.to(data.room).emit('muteCase', {sender: data.sender, ismute: data.ismute});
     })
 }
 
