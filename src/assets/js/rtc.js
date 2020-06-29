@@ -50,7 +50,7 @@ window.addEventListener('load', () => {
                 pc.push(data.socketId);
                 init(true, data.socketId);
                 new_user(data);
-                // newBoarder();
+                // newBoarder(); ################
             });
 
             socket.on('newUserStart', (data) => {
@@ -109,7 +109,7 @@ window.addEventListener('load', () => {
             })
 
             // Board
-            removeBoard();
+            removeBoard(); //To Be Removed
             socket.on('boardControls', (option) => {
                 if (option) {
                     setUpBoard();
@@ -368,7 +368,7 @@ window.addEventListener('load', () => {
             }, 50);
         });
 
-        // Whiteboard On/Off Controls
+        // Whiteboard On/Off Controls ###############
         // document.getElementById('toggle-board').addEventListener('click', (e) => {
         //     e.preventDefault();
         //     document.getElementById('toggle-board').classList.toggle('bg-primary');
@@ -381,19 +381,19 @@ window.addEventListener('load', () => {
         //     }
         // });
         function setUpBoard () {
-            // document.getElementById('toggle-board').classList.add('bg-primary');
+            // document.getElementById('toggle-board').classList.add('bg-primary'); ###############
             document.getElementById('board').classList.remove('hidden');
             document.getElementById('videos').classList.remove('offBoard');
             document.getElementById('videos').classList.add('onBoard');
         }
         function removeBoard () {
-            // document.getElementById('toggle-board').classList.remove('bg-primary');
+            // document.getElementById('toggle-board').classList.remove('bg-primary'); ###############
             document.getElementById('board').classList.add('hidden');
             document.getElementById('videos').classList.remove('onBoard');
             document.getElementById('videos').classList.add('offBoard');
         }
         function newBoarder () {
-            // if (document.getElementById('toggle-board').classList.contains('bg-primary')) {
+            // if (document.getElementById('toggle-board').classList.contains('bg-primary')) { ###############
                 socket.emit('boardControls', {room: room, option: true});
                 setUpBoard();
             // } else {
