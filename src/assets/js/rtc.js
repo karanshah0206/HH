@@ -108,6 +108,10 @@ window.addEventListener('load', () => {
                 }
             })
 
+            setTimeout(() => {
+                socket.emit('muteCase', {room: room, sender: socketId, ismute: true});
+            }, 5000);
+
             // Board
             removeBoard();
             socket.on('boardControls', (option) => {
