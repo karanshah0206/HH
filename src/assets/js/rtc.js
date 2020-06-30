@@ -32,6 +32,7 @@ window.addEventListener('load', () => {
         var screen = '';
         var recordedStream = [];
         var mediaRecorder = '';
+        var muteState = false;
 
         //Get user video by default
         getAndSetUserStream();
@@ -49,6 +50,9 @@ window.addEventListener('load', () => {
             // New User Joined
             socket.on('new user', (data) => {
                 socket.emit('newUserStart', {to:data.socketId, sender:socketId});
+                setTimeout(() => {
+                    socket.emit('muteCase', {room: room, sender: socketId, ismute: muteState});
+                }, 1000);
                 pc.push(data.socketId);
                 init(true, data.socketId);
                 new_user(data);
@@ -101,7 +105,6 @@ window.addEventListener('load', () => {
             })
 
             socket.on('muteCase', (data) => {
-                console.log('ID: ' + data.sender + ' Option: ' + data.ismute);
                 if (data.ismute == true) {
                     document.getElementById(data.sender + '-mute').classList.remove('hidden');
                 }
@@ -111,7 +114,7 @@ window.addEventListener('load', () => {
             })
 
             // Board
-            removeBoard(); //To Be Removed
+            removeBoard(); //##########
             socket.on('boardControls', (option) => {
                 if (option) {
                     setUpBoard();
@@ -442,8 +445,8 @@ window.addEventListener('load', () => {
                 e.target.classList.add('fa-microphone-alt-slash');
                 e.target.classList.remove('fa-microphone-alt');
                 elem.setAttribute('title', 'Unmute');
-                socket.emit('muteCase', {room: room, sender: socketId, ismute: true});
-                console.log("Mute Working!");
+                muteState = true;
+                socket.emit('muteCase', {room: room, sender: socketId, ismute: muteState});
 
                 myStream.getAudioTracks()[0].enabled = false;
             }
@@ -452,8 +455,8 @@ window.addEventListener('load', () => {
                 e.target.classList.add('fa-microphone-alt');
                 e.target.classList.remove('fa-microphone-alt-slash');
                 elem.setAttribute('title', 'Mute');
-                socket.emit('muteCase', {room: room, sender: socketId, ismute: false});
-                console.log("Mute Working!");
+                muteState = false;
+                socket.emit('muteCase', {room: room, sender: socketId, ismute: muteState});
 
                 myStream.getAudioTracks()[0].enabled = true;
             }
