@@ -54,29 +54,35 @@ window.addEventListener('load', ()=>{
     document.getElementById('create-room').addEventListener('click', (e)=>{
         e.preventDefault();
 
-        let roomName = document.querySelector('#room-name').value;
-        let yourName = document.querySelector('#your-name').value;
+        if (/\S/.test(document.querySelector('#room-name').value) && /\S/.test(document.querySelector('#your-name').value)){
+            let roomName = document.querySelector('#room-name').value;
+            let yourName = document.querySelector('#your-name').value;
 
-        if(roomName && yourName){
-            //remove error message, if any
-            document.querySelector('#err-msg').innerHTML = "";
+            if (roomName && yourName) {
+                //remove error message, if any
+                document.querySelector('#err-msg').innerHTML = "";
 
-            //save the user's name in sessionStorage
-            sessionStorage.setItem('username', yourName);
+                //save the user's name in sessionStorage
+                sessionStorage.setItem('username', yourName);
 
-            //create room link
-            let roomLink = `${location.origin}?room=${roomName.trim().replace(' ', '_')}_${helpers.generateRandomString()}`;
+                //create room link
+                let roomLink = `${location.origin}?room=${roomName.trim().replace(' ', '_')}_${helpers.generateRandomString()}`;
 
-            //show message with link to room
-            document.querySelector('#room-created').innerHTML = `<font style="color: green">Conference successfully created.</font><br>Share the room link with your members (click <a href="#" onclick="copier('${roomLink}');">here</a> to copy).<br>Click <a href='${roomLink}'>here</a> to enter room.`;
- 
-            //empty the values
-            document.querySelector('#room-name').value = '';
-            document.querySelector('#your-name').value = '';
+                //show message with link to room
+                document.querySelector('#room-created').innerHTML = `<font style="color: green">Conference successfully created.</font><br>Share the room link with your members (click <a href="#" onclick="copier('${roomLink}');">here</a> to copy).<br>Click <a href='${roomLink}'>here</a> to enter room.`;
+    
+                //empty the values
+                document.querySelector('#room-name').value = '';
+                document.querySelector('#your-name').value = '';
+            }
+
+            else {
+                document.querySelector('#err-msg').innerHTML = "Room Name And Your Name Are Required. No Blank Spaces.";
+            }
         }
-
-        else{
-            document.querySelector('#err-msg').innerHTML = "All fields are required";
+        
+        else {
+            document.querySelector('#err-msg').innerHTML = "Room Name And Your Name Are Required. No Blank Spaces.";
         }
     });
 

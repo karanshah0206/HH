@@ -363,7 +363,9 @@ window.addEventListener('load', () => {
         });
 
         document.getElementById('chat-sender').addEventListener('click', () => {
-            sendMsg(document.getElementById('chat-input').value);
+            if (/\S/.test(document.getElementById('chat-input').value)) {
+                sendMsg(document.getElementById('chat-input').value);
+            }
 
             setTimeout(() => {
                 document.getElementById('chat-input').value = '';
