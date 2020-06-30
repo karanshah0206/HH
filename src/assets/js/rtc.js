@@ -7,11 +7,13 @@ window.addEventListener('load', () => {
     if (!room) {
         document.querySelector('#room-create').attributes.removeNamedItem('hidden');
         document.getElementById('globalFooter').classList.remove('hidden');
+        document.getElementById('room-name').focus();
     }
 
     else if (!username) {
         document.querySelector('#username-set').attributes.removeNamedItem('hidden');
         document.getElementById('globalFooter').classList.remove('hidden');
+        document.getElementById('username').focus();
     }
 
     else {

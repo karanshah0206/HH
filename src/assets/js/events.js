@@ -17,7 +17,8 @@ window.addEventListener('load', ()=>{
             chatElem.attributes.removeNamedItem('hidden');
             mainSecElem.classList.remove('col-md-12');
             mainSecElem.classList.add('col-md-9');
-            chatElem.classList.add('chat-opened');          
+            chatElem.classList.add('chat-opened');
+            document.getElementById('chat-input').focus();
         }
 
         //remove the 'New' badge on chat icon (if any) once chat is opened.
