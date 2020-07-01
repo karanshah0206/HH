@@ -339,13 +339,26 @@ html {
 
 .remote-video-mute {
     position: absolute;
-    top: 2px;
+    bottom: 2px;
     right: 2px;
     background-color: rgb(255, 0, 0);
     color: rgb(255, 255, 255);
-    font-size: 12px;
+    font-size: 8px;
     border: 1px solid red;
     border-radius: 50%;
     z-index: 2;
     padding: 5px;
+}
+
+.remote-video-name {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 10px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    z-index: 2;
+    padding: 3px;
+    margin: 0;
 }

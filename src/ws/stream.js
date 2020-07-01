@@ -39,7 +39,7 @@ const stream = (socket) => {
 
     // Mute Controls
     socket.on('muteCase', (data) => {
-        socket.to(data.room).emit('muteCase', {sender: data.sender, ismute: data.ismute});
+        socket.to(data.room).emit('muteCase', (data));
     })
 }
 

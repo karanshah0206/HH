@@ -51,17 +51,21 @@ window.addEventListener('load', () => {
             socket.on('new user', (data) => {
                 socket.emit('newUserStart', {to:data.socketId, sender:socketId});
                 setTimeout(() => {
-                    socket.emit('muteCase', {room: room, sender: socketId, ismute: muteState});
-                }, 1000);
+                    socket.emit('muteCase', {room: room, sender: socketId, ismute: muteState, uName: username});
+                }, 5000);
                 pc.push(data.socketId);
                 init(true, data.socketId);
                 new_user(data);
                 // newBoarder(); ################
             });
+            
 
             socket.on('newUserStart', (data) => {
                 pc.push(data.sender);
                 init(false, data.sender);
+                setTimeout(() => {
+                    socket.emit('muteCase', {room: room, sender: socketId, ismute: muteState, uName: username});
+                }, 5000);
             });
 
             socket.on('ice candidates', async (data) => {
@@ -105,6 +109,7 @@ window.addEventListener('load', () => {
             })
 
             socket.on('muteCase', (data) => {
+                document.getElementById(data.sender + '-name').innerText = data.uName;
                 if (data.ismute == true) {
                     document.getElementById(data.sender + '-mute').classList.remove('hidden');
                 }
@@ -221,6 +226,10 @@ window.addEventListener('load', () => {
                     muteDiv.className = 'hidden remote-video-mute';
                     muteDiv.innerHTML = `<i class="fa fa-microphone-slash" title="User Is Mute"></i>`;
 
+                    let nameDiv = document.createElement('div');
+                    nameDiv.id = `${partnerName}-name`;
+                    nameDiv.className = 'remote-video-name';
+
                     // Create a new div for card
                     let cardDiv = document.createElement('div');
                     cardDiv.className = 'card';
@@ -228,6 +237,7 @@ window.addEventListener('load', () => {
                     cardDiv.appendChild(newVid);
                     cardDiv.appendChild(controlDiv);
                     cardDiv.appendChild(muteDiv);
+                    cardDiv.appendChild(nameDiv);
 
                     //put div in main-section elem
                     document.getElementById('videos').appendChild(cardDiv);
@@ -446,7 +456,7 @@ window.addEventListener('load', () => {
                 e.target.classList.remove('fa-microphone-alt');
                 elem.setAttribute('title', 'Unmute');
                 muteState = true;
-                socket.emit('muteCase', {room: room, sender: socketId, ismute: muteState});
+                socket.emit('muteCase', {room: room, sender: socketId, ismute: muteState, uName: username});
 
                 myStream.getAudioTracks()[0].enabled = false;
             }
@@ -456,7 +466,7 @@ window.addEventListener('load', () => {
                 e.target.classList.remove('fa-microphone-alt-slash');
                 elem.setAttribute('title', 'Mute');
                 muteState = false;
-                socket.emit('muteCase', {room: room, sender: socketId, ismute: muteState});
+                socket.emit('muteCase', {room: room, sender: socketId, ismute: muteState, uName: username});
 
                 myStream.getAudioTracks()[0].enabled = true;
             }
