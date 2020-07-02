@@ -32,9 +32,14 @@ const stream = (socket) => {
         socket.to(data.room).emit('chat', {sender: data.sender, msg: data.msg});
     });
 
-    // Board
+    // Board Controls
     socket.on('boardControls', (data) => {
         socket.to(data.room).emit('boardControls', (data.option));
+    });
+
+    // Board Drawing
+    socket.on('boardDrawn', (data) => {
+        socket.broadcast.to(data.room).emit('boardDrawn', (data.content));
     });
 
     // Mute Controls
