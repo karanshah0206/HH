@@ -142,6 +142,7 @@ window.addEventListener('load', () => {
                 // Fabric
                 var canvas = new fabric.Canvas('board-child', {isDrawingMode: true});
                 canvas.backgroundColor = 'rgb(245, 245, 220)';
+                canvas.setZoom(1);
 
                 // Clear Canvas
                 document.getElementById('clear-board-btn').addEventListener('click', () => {
