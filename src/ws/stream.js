@@ -11,7 +11,7 @@ const stream = (socket) => {
             socket.to(data.room).emit('new user', {socketId:data.socketId, username:data.uName});
         }
 
-        console.log("User Named (" + data.uName + ") Joined Room (" + data.room + ") With Socket ID (" + data.socketId + ") At (" + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds() +") On (" + today.getFullYear() + "/" + (today.getMonth()+1) + "/" + today.getDate() + ") India Standard Time.");
+        console.log("User Named (" + data.uName + ") Joined Room (" + data.room + ") With Socket ID (" + data.socketId + ") At (" + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds() +") On (" + today.getFullYear() + "/" + (today.getMonth()+1) + "/" + today.getDate() + ").");
     });
 
     // New User
