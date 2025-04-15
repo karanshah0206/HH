@@ -4,12 +4,12 @@
   "description": "A video conferencing web app with chat, screen sharing, and screen recording built with NodeJS, WebRTC, and SocketIO",
   "main": "src/app.js", 
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.21.2",
     "serve-favicon": "^2.5.0",
-    "socket.io": "^2.4.0"
+    "socket.io": "^2.5.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.22"
   },
   "scripts": {
     "start": "node src/app.js",
