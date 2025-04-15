@@ -9,7 +9,7 @@
     "socket.io": "^2.5.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.22"
   },
   "scripts": {
     "start": "node src/app.js",
