@@ -6,7 +6,7 @@
   "dependencies": {
     "express": "^4.22.1",
     "serve-favicon": "^2.5.0",
-    "socket.io": "^2.5.0"
+    "socket.io": "^4.8.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
